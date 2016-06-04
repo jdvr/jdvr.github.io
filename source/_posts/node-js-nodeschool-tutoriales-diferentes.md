@@ -10,6 +10,8 @@ tags:
 
 Llevo alrededor de 4 años haciendo tutoriales y por lo general siempre comparto con la comunidad y/o compañeros de trabajo cuando encuentro algo interesante, pero nunca me había planteado destinar un post del blog a esto,  después de unos días realizando estos tutoriales decidí que quizás este era el momento.
 
+<!-- more -->
+
 ## ¿Qué les hace diferentes?
 
 Esta serie de tutoriales están orientados como una 'aventura' o un juego por fases, tienes una serie de retos y el objetivo es ir superando uno a uno esos retos que entre ellos tiene mayor o menor relación pero que al final forman parte de un todo. El tutorial lo descargas y lo ejecutas en tu máquina como si de una aplicación se tratara, tiene su entorno de menú, con una lista de retos.

@@ -15,7 +15,7 @@ date: 2015-02-14 11:30:03
 ---
 
 [Spark](http://sparkjava.com/), es un Framework aunque se comporta más como una librería que esta inspirado en [Sinatra](http://www.sinatrarb.com/), que usando las nuevas funciones de Java 8, nos proporciona una interfaz muy simple y potente par a construir nuestra Rest API o web. Prefiero ejemplificar su gran simplicidad y potencia en un proyecto, así que vamos a ello.
-
+<!-- more -->
 El prototipo objetivo es una Rest API que nos permita registrar un ID de dispositivo. Es tan simple como un _"Hello World"_, pero da otra pespectiva.
 
 Una vez la API reciba el ID de dispositivo lo almacenará en una base de datos, que para nuestro ejemplo será un fichero de texto corriente situado en algún directorio del equipo.

@@ -14,7 +14,7 @@ date: 2015-09-06 08:17:01
 ---
 
 Hace algunos días compre un producto por internet. Por costumbre tengo hacer el tracking de los paquetes usando [17track](http://17track.net/) esta web china tiene un sistema de seguimiento muy bueno, siendo capaz de aportar información de casi cualquier origen a cualquier destino, sin importar cual sea la compañía que lo envía, y esto es gracias a sus numerosos acuerdos con compañías de transporte, misma razón por la cual no tiene una API pública.
-
+<!-- more -->
 Durante la espera para que llegue mi paquete suelo comprobar una vez al día el estado del tracking, una tarea bastante aburrida y que preferiría que fuera automática.
 
 ### Hazlo tú, que a mi me da pereza
@@ -105,35 +105,63 @@ De igual manera que la librería anterior considero que aporta una interfaz muy 
 De nuevo, tenemos una clase, que refactor a parte, se entiende muy bien y en menos de 5 min te permite pasar de estar buscando una solución en google a haber enviado un email.
 
 Esto es un ejemplo del contenido del email resultante:
-> Destination Country> 
+> Destination Country
 > 
-> 2015-08-26 00:00> 
-> Delivered> 
-> 2015-08-26 00:00> 
-> In the delivery process> 
-> 2015-08-20 00:00> 
-> Dispatch from the point of origin international office> 
-> Origin Country - Cache Time:2015-09-06 03:35 - Go to official website2015-08-26 14:19> 
-> The item has been delivered successfully> 
-> 2015-08-21 08:54> 
-> The item has arrived in the country of destination> 
-> 2015-08-20 09:30> 
-> The item is on transport to the country of destination> 
-> 2015-08-20 08:59> 
-> The item is at the PostNL sorting center> 
-> 2015-08-19 12:14> 
-> The item is at the handover point from freight carrier to PostNL> 
-> 2015-08-18 08:03> 
-> The item has arrived in the transit airport> 
-> 2015-08-18 06:35> 
-> The item has left the originating country> 
-> 2015-08-17 13:37> 
-> The item is received by the shipper in the originating country> 
-> 2015-08-17 11:51> 
-> The item is ready for shipment> 
-> 2015-08-17 06:00> 
-> The item is pre-advised> 
-> 2015-08-17 04:48 _&lt;-- Fecha del evento_> 
+> 
+> 2015-08-26 00:00
+> 
+> Delivered
+> 
+> 2015-08-26 00:00
+> 
+> In the delivery process
+> 
+> 2015-08-20 00:00
+> 
+> Dispatch from the point of origin international office
+> 
+> Origin Country - Cache Time:2015-09-06 03:35 - Go to official website2015-08-26 14:19
+> 
+> The item has been delivered successfully
+> 
+> 2015-08-21 08:54
+> 
+> The item has arrived in the country of destination
+> 
+> 2015-08-20 09:30
+> 
+> The item is on transport to the country of destination
+> 
+> 2015-08-20 08:59
+> 
+> The item is at the PostNL sorting center
+> 
+> 2015-08-19 12:14
+> 
+> The item is at the handover point from freight carrier to PostNL
+> 
+> 2015-08-18 08:03
+> 
+> The item has arrived in the transit airport
+> 
+> 2015-08-18 06:35
+> 
+> The item has left the originating country
+> 
+> 2015-08-17 13:37
+> 
+> The item is received by the shipper in the originating country
+> 
+> 2015-08-17 11:51
+> 
+> The item is ready for shipment
+> 
+> 2015-08-17 06:00
+> 
+> The item is pre-advised
+> 
+> 2015-08-17 04:48 _&lt;-- Fecha del evento_
+> 
 > The Item is at the shippers warehouse  _&lt;-- Evento_
 
 ### Pan para hoy, hambre para mañana

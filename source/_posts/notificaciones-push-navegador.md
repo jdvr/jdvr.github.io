@@ -15,6 +15,8 @@ date: 2015-07-05 08:50:30
 
 Durante los últimos 4 meses he desarrollado mi trabajo de fin de grado, el cual me ha valido para por fin obtener mi título, pero más importante aún, he aprendido mucho sobre el uso de diferentes tecnologías en diferentes contextos. Hoy voy a escribir sobre el sistema que uso para enviar notificaciones push al navegador.
 
+<!-- more -->
+
 Lo que hago es dejar la conexión HTTP abierta con el cliente desde el servidor y voy enviando respuestas parciales hasta que al final envío una que significa final.
 
 Bien es cierto que una buena alternativa sería el uso de sockets, pero también es verdad que me fue muy fácil comenzar a trabajar dejando la conexión HTTP viva y por eso elegí esta opción.

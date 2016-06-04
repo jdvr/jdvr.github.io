@@ -11,7 +11,7 @@ tags:
 ---
 
 En lo que podemos considerar la segunda parte o la segunda iteración sobre [Chapp](/2015/12/06/springboot-y-stomp-aplicaciones-web-interactivas-con-websocket/ "Aplicaciones web interactivas usando WebSocket"), vamos a hablar de como incluir una base de datos embebida en memoria para nuestra aplicación.
-
+<!-- more -->
 En mi caso he elegido este sistema para esta aplicación por que hacia tiempo que tenia ganas de probarlo y como comenté en el anterior post la idea de esta app es ir construyendo un proyecto real con diferentes tecnologías, así que no había mejor escenario y oportunidad que esta para probar la base de datos embebida.
 
 Aunque existen diferentes configuraciones que la base de datos sea embebida y en memoria significa que la base de datos arranca junto con su contenedor (la aplicación) y desaparece cuando este lo hace.

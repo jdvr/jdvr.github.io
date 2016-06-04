@@ -10,7 +10,7 @@ tags:
 ---
 
 Esta semana tuve la oportunidad de asistir a la Conferencia Agile Spain 2015 (CAS), en el Círculo de bellas artes de Madrid en el centro de la capital. Han sido dos días muy interesantes en los que como en otros eventos he ido con el interés y la ilusión de adquirir nuevos conocimientos e ideas, pero también con ganas de conocer y reencontrarme con muchos compañeros de profesión. En balance general mis expectativas se han cumplido, he tenido la oportunidad debatir ideas, expresar opiniones y asistir a charlas. A continuación voy a intentar resumir mis impresiones sobre los puntos de inflexión que han hecho que el evento merezca la pena.
-
+<!-- more -->
 # En el apartado general
 
 &nbsp;

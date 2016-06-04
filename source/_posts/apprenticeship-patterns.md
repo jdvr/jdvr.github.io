@@ -9,7 +9,7 @@ tags:
 ---
 
 En el camino hacia la maestría el primer paso es ser un aprendiz, y en esa etapa es importante tener buenas prácticas para que nuestro camino como aprendices sea cómodo y fructífero, mis compañeros y yo hemos comenzado el club de lectura leyendo [Apprenticeship Patterns](http://shop.oreilly.com/product/9780596518387.do), dado que nuestro objetivo es aprender, era importante comenzar con un libro que nos ayudará a identificar como podíamos sacar mejor provecho de nuestras lecturas futuras y de nuestro trabajo diario en general.
-
+<!-- more -->
 &nbsp;
 
 ## Resumen general del libro

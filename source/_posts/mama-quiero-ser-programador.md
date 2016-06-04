@@ -8,7 +8,7 @@ tags:
 ---
 
 Durante el último año se ha producido varias veces una situación bastante normal pero que a mi me ha hecho reflexionar, normalmente en medio de una conversación, con alguien que acabas de conocer o un viejo amigo que hace tiempo que no ves, la otra persona suele comentar algo parecido a: "¿A qué te dedicas?" o "¿Qué eres?".
-
+<!-- more -->
 Por lo general la gente suele responder estas preguntas con la profesión asociada a su título universitario o estudios y a veces suelen destacar cuando lo estudiaron o donde. Yo normalmente respondo que soy "Desarrollador de Software", y los curiosos suelen añadir: "¿Estudiaste Ingeniería Informática o tienes un ciclo?". Creo que en nuestra profesión esa pregunta y su respuesta no tiene la misma validez que en otras.
 
 Cuando un estudiante, o profesional, decide que quiere dedicarse a la programación, desde mi punto de vista el siguiente paso que debe tomar es coger las riendas de su formación y carrera e invertir su tiempo en formarse. En alguna entrevista me han preguntado: "¿Cuál es su formación?" a lo que yo suelo responder que mi formación reglada es la carrera pero la mayor parte de mi conocimiento y capacidades viene de actividades personales o con la comunidad fuera de lo que son mis estudios y que siempre realizo para intentar mejorar cada vez un poquito más.

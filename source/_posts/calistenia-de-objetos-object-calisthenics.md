@@ -11,7 +11,7 @@ date: 2015-04-14 10:00:19
 ---
 
 Desde hace aproximadamente 2 años los compañeros de la comunidad y yo, estamos predicando y divulgando la importancia de un código limpio, fácil de leer, fácil de mantener, con test y el gran reto: que sea comprensible para cualquier programador que tenga la fortuna/desgracia de recibir como legado nuestro trabajo.
-
+<!-- more -->
 Pero fue hace tan solo 2 semanas o algo así que nos topamos con la Calistenia de Objetos, aunque suene casi a chino, la realidad es que todas y cada unas de sus partes son puro sentido común, empecemos:
 
 > Calistenia:

@@ -12,7 +12,7 @@ date: 2015-03-14 09:47:45
 ---
 
 I start and update pet projects every week or at least every month, I always share it on GitHub and sometimes I tweet something related to this projects but others times I forgot, I just push it to GitHub and never say nothing to anybody.
-
+<!-- more -->
 Everybody check their twitter timeline at least once a day, but no every developer check his GitHub timeline so trying to share my pet projects in GitHub and give them more visibility, this week I have been writing and trying a GitHub updated share script.
 
 Let's start with our script to share our daily repository updates. I code it with python.

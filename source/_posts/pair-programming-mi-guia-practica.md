@@ -10,6 +10,8 @@ tags:
 
 En estos momentos tengo la oportunidad de trabajar en una empresa donde los desarrolladores tenemos libertad para hacer pairing, si bien es cierto que a primera vista esta técnica pueda parecer simple, _“dos personas sentadas juntas programando en el mismo ordenador”_, la realidad es que en mi día a día siento que no aprovecho al 100% lo que el pair programming nos podría aportar y por mi parte probablemente se deba a la falta de conocimiento de como aprovechar mejor las sesiones, por esto mismo he decidido desempolvar todas las referencias que tengo sobre Pair Programming y hacer un pequeño resumen cómodo de consultar.
 
+<!-- more -->
+
 ### Descripción
 
 El **Pair programming** es una conversación entre dos desarrolladores que se sientan juntos para desarrollar, analizar y testear de la mejor manera posible una pieza de código. A cambio de sentarse junto los desarrolladores deben:

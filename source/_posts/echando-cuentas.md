@@ -8,7 +8,7 @@ tags:
 ---
 
 Es bastante común que las personas tratemos de llevar nuestras finanzas personales usando una hoja de calculo, Fitonic, alguna aplicación de gastos, etc. Yo personalmente uso una hoja de calculo y muchas veces papel y lápiz, si en casa de herrero, cuchillo de palo.
-
+<!-- more -->
 Semana a semana apunto lo que he gastado y luego hago un recuento del mes, me iba de maravilla pero solo echaba de menos una cosa, que a veces si quería echar un vistazo rápido o enseñarle algo a mi pareja tenía que abrir la hoja de calculo y aplicar un filtro, con lo que ello implica, en el móvil es incomodo y en el ordenador, a veces no se tiene a mano y muchas veces da pereza.
 
 Mi solución ha sido combinar la hoja de calculo (Google Sheet) con [Google Script](https://developers.google.com/apps-script/?hl=en), Básicamente ahora mismo he escrito una función que hace un calculo de gastos por concepto y además calcula el total de la hoja.
