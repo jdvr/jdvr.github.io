@@ -2,7 +2,7 @@ message="deployed at "$(date +%F)
 branch=$(date +%s) 
 git add .
 git commit -m "$message"
-g checkout $branch
+git checkout $branch
 git push -u origin $branch
 git checkout master
 sudo hexo generate -d
