@@ -1,7 +1,8 @@
-#!/bin/bash
+message="deployed at "$(date +%F) 
+branch=$(date +%s) 
+ga .
+gcmsg "$message"
+g checkout branch
+gp origin branch
+git checkout master
 deploy-blog
-
-git checkout deployments
-git add .
-message="deployed at "$(date +%s) 
-git commit -m "$message"
