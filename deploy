@@ -1,8 +1,8 @@
 message="deployed at "$(date +%F) 
 branch=$(date +%s) 
-ga .
-gcmsg "$message"
-g checkout branch
-gp origin branch
+git add .
+git commit -m "$message"
+g checkout $branch
+git push -u origin $branch
 git checkout master
-deploy-blog
+sudo hexo generate -d
