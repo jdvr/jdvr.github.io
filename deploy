@@ -1,7 +1,7 @@
 #!/bin/bash
-#deply-blog
+deply-blog
 
-echo "git checkout deployments"
-echo "git add ."
+git checkout deployments
+git add .
 message="deployed at "$(date +%s) 
-echo "git commit -m $message"
+git commit -m "$message"
