@@ -20,7 +20,7 @@ El **Pair programming** es una conversación entre dos desarrolladores que se si
 *   Adoptar cada uno de sus roles
 &nbsp;
 
-[![driver-navigator](http://juandavidvega.es/blog/wp-content/uploads/2015/11/driver-navigator.png)](http://juandavidvega.es/blog/wp-content/uploads/2015/11/driver-navigator.png)
+[![driver-navigator](/images/2015/11/driver-navigator.png)](/images/2015/11/driver-navigator.png)
 
 ### Roles: Navigator
 
