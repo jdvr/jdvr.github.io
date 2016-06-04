@@ -1,5 +1,5 @@
 #!/bin/bash
-deply-blog
+deploy-blog
 
 git checkout deployments
 git add .
