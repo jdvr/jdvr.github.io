@@ -12,7 +12,7 @@ date: 2015-12-06 13:58:51
 tags:
 ---
 
-Hace aproximadamente 6 meses durante el desarrollo del proyecto Connect2, me vi en la necesidad de realizar una transacción que debía enviar desde el navegador al servidor cierta información y luego finalizar la transacción y esperar que el servidor hiciera una petición a un web service y cuando obtenía la respuesta la mandaba al cliente. La solución rápida y sencilla a ese problema la pueden ver [aquí](http://juandavidvega.es/blog/?p=92 "Notificaciones Push en el navegador"). Sin embargo, me quede con la mala sensación de no haber explorado hasta el final el camino de los WebSockets y por eso he empezado esta serie de post.
+Hace aproximadamente 6 meses durante el desarrollo del proyecto Connect2, me vi en la necesidad de realizar una transacción que debía enviar desde el navegador al servidor cierta información y luego finalizar la transacción y esperar que el servidor hiciera una petición a un web service y cuando obtenía la respuesta la mandaba al cliente. La solución rápida y sencilla a ese problema la pueden ver [aquí](/2015/07/05/notificaciones-push-navegador/ "Notificaciones Push en el navegador"). Sin embargo, me quede con la mala sensación de no haber explorado hasta el final el camino de los WebSockets y por eso he empezado esta serie de post.
 
 &nbsp;
 
