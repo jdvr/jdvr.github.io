@@ -61,7 +61,7 @@ Despúes de cambiar todas las urls absolutas que apuntaban al antiguo wordpres p
 
 Después de todo esto, tenía que desplegar y de nuevo fuia la web de Hexo que tiene una [docu](https://hexo.io/docs/deployment.html) para despliege, como con todo muy masticado y cómodo. En mi caso elegí GitHub Pages. 
 
-Algo que no me gusta es que los desplieges son de estaticos ya generados, que es el contenido de la web final. En internet hay quien suguiere usar un repo separado para los sources, pero mi opción ha sido pusear los sources a una rama de timestamp en cada despliegue.
+Algo que no me gustaba es que los desplieges son de estaticos ya generados, que es el contenido de la web final. En internet hay quien suguiere usar un repo separado para los sources, pero mi opción ha sido pushear los sources a una rama de timestamp en cada despliegue.
 
 {% codeblock lang:sh Script de deploy %}
 message="deployed at "$(date +%F) 
@@ -74,7 +74,10 @@ git checkout master
 sudo hexo generate -d
 {% endcodeblock %}
 
-El comando *hexo generate -d* es lo único necesario para generar y desplegar, el resto de elementos es para copiar los sources. En menos de 1 segunda ya esta desplegado :)
+El comando **hexo generate -d** es lo único necesario para generar y desplegar, el resto de elementos es para copiar los sources. En menos de 1 segundo ya esta desplegado :)
 
 ## Conclusión
 
+Si tienes un pequeño blog (como el mio), que escribo por hobbit, desde mi punto de vista se gana mucho tiempo y comodidad.
+
+Algo que no nombre durante el post, son los "themes", hay algunos ya [disponibles](http://hexo.io/themes), sin embargo mi opción ha sido hacer fork de uno de esos y ajustarlo a mi blog, otra tarea que es muy sencialla, los temas como el resto de framework esta muy buen documentado y añade ese toque de perzonalización que siempre es muy importante :).
