@@ -36,7 +36,54 @@ Intentaré no perderme en los detalles, voy a guiar de forma algo más genérica
 Lo primero es crear un proyecto Maven, vamos a utilizar Maven para gestionar nuestra dependencia con Spring Messaging y para incluir el plugin para hacer el build de Spring Boot.
 
 Deberíamos tener algo similar a esto:
-<pre class="lang:default decode:true" data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/pom.xml"></pre>
+
+{% codeblock lang:xml pom.xml %}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>es.juandavidvega</groupId>
+    <artifactId>spring-websocket</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.5.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
+
+{% endcodeblock %}
 
 &nbsp;
 
@@ -44,19 +91,104 @@ Deberíamos tener algo similar a esto:
 
 He decidido dividir los mensajes en dos tipos, los de entrada (peticiones) y los de salida (respuesta), de esta manera tenemos un mensaje de entrada para cuando se da de alta un usuario. 
 
-<pre class="lang:java decode:true " data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/input/HelloMessage.java"></pre>
+
+{% codeblock lang:java %}
+
+package es.juandavidvega.input;
+
+public class HelloMessage {
+    private String sender;
+
+    public String getSender() {
+        return this.sender;
+    }
+
+}
+
+{% endcodeblock %}
+
 Solo incluye un Sender que es el nombre de usuario.
 
 Y como mencioné, tenemos también un mensaje de salida para dar respuesta a esa unión de un nuevo usuario.
-<pre class="lang:java decode:true" data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/output/GreetingMessage.java"></pre>
+
+{% codeblock lang:java %}
+
+
+package es.juandavidvega.output;
+
+
+public class GreetingMessage {
+
+    private final String content;
+
+    public GreetingMessage(String content) {
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+}
+
+{% endcodeblock %}
 
   El otro intercambio de mensajes que hay en nuestra aplicación es la de cuando un usuario envía un texto para publicarlo en la sala de chat, en ese caso esperamos un mensaje de entrada que tenga esta información: 
 
-<pre class="lang:java decode:true" data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/input/UserMessage.java"></pre>
-&nbsp;
+
+{% codeblock lang:java %}
+package es.juandavidvega.input;
+
+
+import java.util.Date;
+
+public class UserMessage {
+
+    private String content;
+    private String sender;
+    private Date sendDate;
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public Date getSendDate() {
+        return sendDate;
+    }
+}
+{% endcodeblock %}
 
 Y como respuesta generamos un mensaje que está representado por una instancia de este objeto:
-<pre class="lang:java decode:true" data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/output/ChatMessage.java"></pre>
+
+{% codeblock lang:java %}
+public class ChatMessage {
+
+    private String content;
+    private String sender;
+    private Date sendDate;
+
+    public ChatMessage(UserMessage userMessage) {
+        this.content = userMessage.getContent();
+        this.sender = userMessage.getSender();
+        this.sendDate = userMessage.getSendDate();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public Date getSendDate() {
+        return sendDate;
+    }
+}
+{% endcodeblock %}
 
   Una vez tenemos todos nuestros mensajes representados como objetos java me gustaría añadir que el envío y recepción de estos objetos entre el cliente y el servidor se hace en formato JSON, para esto Spring se encarga de gestionar la serialización y deserialización de los mensajes JSON a objetos Java usado Jackson JSON, la explicación de cómo funciona Jackson escapa al contexto de este post, así que si no lo conoces, solo es impórtante que entiendas que hay algo que está transformando esos mensajes de cliente a nuestros objetos Java y viceversa.     
 
@@ -64,8 +196,34 @@ Y como respuesta generamos un mensaje que está representado por una instancia d
 
 Para la gestión de mensajes que vamos a usar un controlador Spring, ahora mismo tenemos dos funcionalidades que cubrir, Un usuario que se une a la sala y Un usuario que manda un mensaje a la sala. Creamos una clase añadiendo el estereotipo @Controller de Spring,  y dentro de esta clase incluimos un método por funcionalidad. 
 
-<pre class="lang:java decode:true " data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/action/ChatRoomController.java"></pre>
-&nbsp;
+
+{% codeblock lang:java %}
+
+@Controller
+public class ChatRoomController {
+
+    @MessageMapping("/hello")
+    @SendTo("/chat/joined")
+    public GreetingMessage join(HelloMessage message) throws Exception {
+        simulatedDelay();
+        return new GreetingMessage("Hello " + message.getSender() + ", welcome to chat!");
+    }
+
+    @MessageMapping("/send/message")
+    @SendTo("/chat/new/message")
+    public ChatMessage message(UserMessage message) throws Exception {
+        simulatedDelay();
+        return new ChatMessage(message);
+    }
+
+
+
+
+    private void simulatedDelay() throws InterruptedException {
+        Thread.sleep(3000);
+    }
+}
+{% endcodeblock %}
 
 A pesar de lo simple de esta clase, hay dos elementos que recalcar, uno es la anotación @MessageMapping, esto nos permite especificar que cuando se reciba un mensaje en la URL “/send/message”, el mensaje es gestionado por el método concreto de este controlador. Otra anotación importante y casi intuitiva es la de @SendTo que funciona justo al contrario de la anterior, es decir, cuando este método devuelve un mensaje, este mensaje debe ser publicado en la url “/chat/new/message”.
 
@@ -74,7 +232,25 @@ Nuestra aplicación funciona con un sistema de publicaciones/suscripciones, podr
 ###  4\. Configuración de Spring STOMP Messaging
 
 Para que Spring se encargue de la gestión de publicaciones/suscripciones que estoy intentando conseguir es necesario añadir una pequeña configuración.
-<pre class="lang:java decode:true " data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/config/WebSocketConfig.java"></pre>
+
+{% codeblock lang:java %}
+@Configuration
+@EnableWebSocketMessageBroker
+public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
+
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        config.enableSimpleBroker("/chat");
+        config.setApplicationDestinationPrefixes("/app");
+    }
+
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/hello").withSockJS();
+    }
+
+}
+{% endcodeblock %}
 
   De nuevo voy a detenerme en explicar el porqué de cada elemento de esta clase. Comenzamos con la anotación @Configuration que es un estereotipo que le indica a Spring que debe interpretar esta clase como una configuración de nuestra aplicación. La segunda anotación es auto descriptiva, @EnableWebSocketMessageBroker nos permite indicarle a Spring que se active el “intercambiador de mensajes” en la capa de los WebSockets. Ahora hacemos extender a nuestra clase de la clase de configuración por defecto que nos ofrece Spring y hacemos override del método “configureMessageBroker”. Este método hace dos cosas, identifica el punto de entrada a la URL “/app” que será el prefijo del contenido de las anotaciones @MessageMapping. También declara un “enableSimpleMesageBroker” que nos permite crear un Message Broker sencillo basado en memoria que será el encargado de gestionar los mensajes que van desde el servidor de vuelta a nuestro cliente y que tienen como prefijo “/chat”. Para acabar con la configuración sobrescribimos el método, “registerStompEndpoints”, que nos permite crear un punto para que el cliente haga una petición y comience la comunicación de mensajes sobre WebSockets.     
 
@@ -82,18 +258,154 @@ Para que Spring se encargue de la gestión de publicaciones/suscripciones que es
 
 Nuestro cliente hará lo siguiente, primero creara una conexión sobre SocketJS con nuestro servidor, luego se suscribirá a las URL en las que sabe que el servidor publicará mensajes, las que están dentro de las anotaciones @SendTo, una vez se ha abierto la conexión y se han creado las suscripciones, nuestro cliente se queda a la espera de las acciones del usuario.  Nuestro usuario, una vez está conectado al servidor, puede realizar dos acciones, primero unirse a la sala, en ese momento nuestro código JS envía un mensaje STOMP sobre la conexión WebSocket abierta que Spring mapea hasta el método del controlador que mostramos más arriba. La otra acción de nuestro usuario es enviar un mensaje, en este caso y de la misma manera de la anterior se envía un mensaje sobre STOMP a la url de “envío de mensajes” que nuevamente Spring mapea nuestro método del controlador ChatRoomController.  Cuando cualquiera de las acciones son ejecutadas y el mensaje llega a nuestro controlador estamos viendo una comunicación uno a uno, el cliente envía un mensaje al servidor, ahora cuando el servidor gestiona el mensaje y publica la respuesta en la url a las que está suscrito el cliente la comunicación no es uno a uno, la respuesta genera una comunicación que es recibida y atendida por todos los cliente que estén conectados (subscritos) las URL que se encuentran en las anotaciones @SendTo. De este manera conseguimos distribuir el nuevo mensaje ente todos los clientes conectados. Código resultante de nuestro cliente:  Java Script 
 
-<pre class="lang:js decode:true " data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/resources/static/chat.js"></pre>
-Index.html
-<pre class="lang:default decode:true " data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/resources/static/index.html"></pre>
 
+{% codeblock lang:javascript %}
+
+var stompClient = null;
+var OpenConnectionURL = '/hello';
+
+var NewJoinURL = '/chat/joined';
+var NewMessageURL = '/chat/new/message';
+
+var SendNameURL = "/app/hello";
+var SendMessageURL = "/app/send/message";
+
+var userName = "@default";
+
+function setConnected(connected) {
+    document.getElementById('connect').disabled = connected;
+    document.getElementById('disconnect').disabled = !connected;
+    document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+    document.getElementById('chatMessage').style.visibility = 'hidden';
+    document.getElementById('chatBox').innerHTML = '';
+}
+
+function connect() {
+    var socket = new SockJS(OpenConnectionURL);
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function(frame) {
+        setConnected(true);
+        console.log('Connected: ' + frame);
+
+        stompClient.subscribe(NewJoinURL, function(greeting){
+            showGreeting(JSON.parse(greeting.body).content);
+        });
+
+        stompClient.subscribe(NewMessageURL, function(chatMessage){
+            showMessage(JSON.parse(chatMessage.body));
+        });
+
+
+    });
+}
+
+function disconnect() {
+    if (stompClient != null) {
+        stompClient.disconnect();
+    }
+    setConnected(false);
+    console.log("Disconnected");
+}
+
+function joinChat() {
+    userName = "@" + document.getElementById('name').value;
+    stompClient.send(SendNameURL, {}, JSON.stringify({ 'sender': userName }));
+}
+
+function sendMessage() {
+    var message = document.getElementById('message').value;
+    stompClient.send(SendMessageURL, {}, JSON.stringify({ 'sender': userName, 'content': message, 'sendDate': new Date()  }));
+    document.getElementById('message').value = '';
+}
+
+function showGreeting(message) {
+    addContentToChat(message);
+    showChatMessageBox();
+    hideLoginBox();
+}
+
+
+function showMessage(userMessage) {
+    addContentToChat(userMessage.sender + " said " + userMessage.content + " at " + new Date(userMessage.sendDate));
+}
+
+function addContentToChat(text){
+    var chatBox = document.getElementById('chatBox');
+    var p = document.createElement('p');
+    p.style.wordWrap = 'break-word';
+    p.appendChild(document.createTextNode(text));
+    chatBox.appendChild(p);
+}
+
+
+function showChatMessageBox() {
+    document.getElementById('chatMessage').style.visibility = 'visible';
+}
+
+function hideLoginBox(){
+    document.getElementById('login').style.visibility = 'hidden';
+
+}
+{% endcodeblock %}
+
+{% codeblock lang:html index %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Hello WebSocket</title>
+        <script src="sockjs-0.3.4.js"></script>
+        <script src="stomp.js"></script>
+        <script src="chat.js"></script>
+    </head>
+    <body onload="disconnect()">
+
+        <div>
+
+            <div>
+                <button id="connect" onclick="connect();">Connect</button>
+                <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
+            </div>
+
+            <div id="conversationDiv">
+
+                <div id="login">
+                    <label>What is your name?</label><input type="text" id="name" />
+                    <button id="sendName" onclick="joinChat();">Send</button>
+                </div>
+
+                <hr/>
+
+                <div id="chatBox"></div>
+
+                <hr/>
+
+                <div id="chatMessage">
+                    <label>Write a message</label><textarea id="message" ></textarea>
+                    <button id="sendMessage" onclick="sendMessage()">Send</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
+{% endcodeblock %}
 Dependencias: Stomp.js  y SockJS (https://github.com/jdvr/Chapp/tree/master/src/main/resources/static)   
 
 ### 6\. Añadir punto de arranque, empaquetar, desplegar y deleitarse en el resultado
 
 Por último, vamos a poner en producción nuestra magnifica aplicación. Vamos a usar la clase de arranque por defecto de Spring Boot, nuestro punto de entrada a la aplicación quedaría así: 
 
-<pre class="lang:java decode:true " data-url="https://raw.githubusercontent.com/jdvr/Chapp/master/src/main/java/es/juandavidvega/ChApp.java"></pre>
-&nbsp;
+
+{% codeblock lang:java Clase de arranque %}
+@SpringBootApplication
+public class ChApp {
+    public static void main(String[] args) {
+        SpringApplication.run(ChApp.class, args);
+    }
+}
+{% endcodeblock %}
 
 No me voy a extender en la explicación del funcionamiento de Spring Boot pero basta con decir que la anotación @SpringBootApplication permite que el resto de clase que hemos marcado, @Controller, @Configuration, etc sean cargadas he interpretadas en el arranque de nuestra aplicación.
 
