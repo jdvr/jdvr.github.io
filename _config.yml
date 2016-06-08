@@ -76,3 +76,6 @@ deploy:
   repo: https://github.com/jdvr/jdvr.github.io
 
 disqus_shortname: juandavidvega
+
+sitemap:
+    path: sitemap.xml
