@@ -79,7 +79,7 @@ El comando **hexo generate -d** es lo único necesario para generar y desplegar,
 
 ## El dominio, Analitycs y Disqus
 
-Para configurar el dominio me hice un poco un lio, por que mi dominio apuntaba a un servidor de dns y yo puse el fichero de zona en otro, casi me vuelvo loco. A parte de eso, la configuración es muy sencilla como explica la [docu de Github Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/), lo primero es crear un fichero [CNAME](https://github.com/jdvr/jdvr.github.io/blob/1465453233/source/CNAME) en el directorio source. Luego vas a gestión a vanzada de tu zona DSN y añades tres registros, dos registros A (192.30.252.153, 192.30.252.154) y uno CNAME con www. No te olvides de borrar los antiguos registros A que sean tudominio.com. (o @ que significa lo mismo). Un ejemlo del fichero de zona en Hosteurope sería así:
+Para configurar el dominio me hice un poco un lio, por que mi dominio apuntaba a un servidor de dns y yo puse el fichero de zona en otro, casi me vuelvo loco. A parte de eso, la configuración es muy sencilla como explica la [docu de Github Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/), lo primero es crear un fichero [CNAME](https://github.com/jdvr/jdvr.github.io/blob/1465453233/source/CNAME) en el directorio source. Luego vas a gestión avanzada de tu zona DSN y añades tres registros, dos registros A (192.30.252.153, 192.30.252.154) y uno CNAME con www. No te olvides de borrar los antiguos registros A que sean tudominio.com. (o @ que significa lo mismo). Un ejemlo del fichero de zona en Hosteurope sería así:
 
 [![Ejemplo de fichero de zona](/images/2016/06/zone-file.png)](/images/2016/06/zone-file.png)
 
@@ -87,8 +87,5 @@ Para añadir analitics es muy sencillo, una vez tengas el identificador de anali
 
 Con Disqus pasa lo mismo que no analitycs, normalmente todo los temas lo soportan, en mi caso el mio lo soportaba y fue tan fácil como añadir en el config el parámetro *disqus_shortname*
 
-## Conclusión
+En resumen, si tienes un pequeño blog (como el mio), que escribo por hobbit, desde mi punto de vista se gana mucho tiempo y comodidad. además no creo que crecer demasiado sea un problema por que al final en producción solo hay estáticos y en el momento de genrar, Hexo asegura que pueden generar miles de estáticos en unos pocos segundos.
 
-Si tienes un pequeño blog (como el mio), que escribo por hobbit, desde mi punto de vista se gana mucho tiempo y comodidad.
-
-Algo que no nombre durante el post, son los "themes", hay algunos ya [disponibles](http://hexo.io/themes), sin embargo mi opción ha sido hacer fork de uno de esos y ajustarlo a mi blog, otra tarea que es muy sencialla, los temas como el resto de framework esta muy buen documentado y añade ese toque de perzonalización que siempre es muy importante :).
