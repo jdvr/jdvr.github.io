@@ -1,3 +1,23 @@
-<div>
-	EJEMPLO 404
+
+<style>
+  body {
+    background-color: rgb(32, 103, 178);
+  }
+</style>
+
+<div class="404">
+		<p class="title"> 404 :(</p>
+		<p class="subtitle"> Ops something was wrong!</p>
+		<p class="subtitle"> REQUEST_NOT_FOUND</p>
+		<p class="redirection-message"> you will be redirect in 30 seconds...</p>
 </div>
+
+<script type="text/javascript">
+var thirtySeconds = 30000;
+window.addEventListener('load', function (e) {
+	setTimeout(function () {
+		window.location.replace("/");
+	}, thirtySeconds);
+}, false)
+
+</script>
