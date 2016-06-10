@@ -1,0 +1,27 @@
+<script type="text/javascript">
+var postUrls = {}
+</script>
+<main class="index">
+  <% page.posts.each(function(post){ %>
+    <article>
+      <h1 class="article-title">
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+      </h1>
+
+      <div class="article-entry">
+        <%- post.excerpt %>
+        <br>
+        <a class="read-more" href="<%- url_for(post.path) %>">Read more...</a>
+      </div>
+
+      <div class="article-meta">
+        <span class="article-date"><%- date(post.date, 'MMM DD YYYY') %></span>
+      </div>
+    </article>
+    <script type="text/javascript">
+      postUrls[<%- post.id %>] = "<%- url_for(post.path) %>";
+    </script>
+  <% }) %>
+
+  <%- partial('../_widget/paginator') %>
+</main>

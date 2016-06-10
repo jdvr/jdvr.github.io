@@ -1,0 +1,12 @@
+<%- partial('./_partial/header') %>
+<%- partial('./_partial/index') %>
+<%- partial('./_partial/footer') %>
+<script type="text/javascript">
+var postUrls = {}
+</script>
+<% page.posts.each(function(post){ %>
+	<script type="text/javascript">
+	  postUrls[<%- post.id %>] = "<%- url_for(post.path) %>";
+	</script>
+<% }) %>
+<%- js('js/app') %>

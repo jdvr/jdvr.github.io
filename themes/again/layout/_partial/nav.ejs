@@ -1,0 +1,5 @@
+<nav class="app-nav">
+  <% for (var i in theme.nav){ %>
+    <a href="<%- url_for(theme.nav[i]) %>"><%= i %></a>
+  <% } %>
+</nav>
