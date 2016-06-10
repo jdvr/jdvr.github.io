@@ -34,11 +34,37 @@ var redirectTo = function (url) {
   window.location.replace(url);
 };
 
+var initBackToTop = function() {
+ 
+  var offset = 500;
+  var duration = 300;
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > offset) {
+      $('.back-to-top').fadeIn(duration);
+    } else {
+      $('.back-to-top').fadeOut(duration);
+    }
+  });
+
+  $('.back-to-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, duration);
+    return false;
+  });
+
+};
+
 window.addEventListener('load', function (e) {
   var requestPostId = extractRequestPostId();
   var url = postUrls[requestPostId];
   if(url){
     redirectTo(url);
   }
-  app.loadBanner()
-}, false)
+  app.loadBanner();
+  $('.back-to-top').hide();
+  initBackToTop();
+  
+
+}, false);
+
