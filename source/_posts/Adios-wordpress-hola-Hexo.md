@@ -8,20 +8,19 @@ tags:
 ---
 
 
-Desde que empece el blog, he estado usando wordpress en un droplet de digital ocean, y siempre por una cosa u otra he tenido algun tipo de problema, normalmente era lento, a esto se le sumaba que sin motivo aparente alguna vez se quedaba pillado el mysql y comenzaba a dar errores 500 y por ultimo, hace algunos post que empecé a escribir en el portátil de camino al trabajo, en el tren, sin internet, estar copiando luego en el editor de wordpress me resultaba muy tedioso. Así que empecé a buscar y encontré [Hexo](http://hexo.io).
+Desde que empecé el blog he estado usando wordpress en un droplet de digital ocean, y siempre por una cosa u otra he tenido algún tipo de problema. Normalmente era la lentitud y a esto se le sumaba que, sin motivo aparente, alguna vez se quedaba pillado el mysql y comenzaba a dar errores 500. Por último, hace algunos post que empecé a escribir en el portátil de camino al trabajo, en el tren y sin internet, lo que hacía muy tediosa la tarea de  estar copiando posteriormente en el editor de wordpress. Así que empecé a buscar y encontré [Hexo](http://hexo.io).
 
 
 <!-- more -->	
 
 ## Instalación
 
-Si se empieza a leer el [tutotial de instalción](https://hexo.io/docs/setup.html), ya se nota que esta todo hecho de forma muy sencilla, así que sigues los pasos y ya tienes tu blog con Hexo. Lo siguiente que me planteo es, como puedo migrar mi blog actual a Hexo sin pasar por el rudimentario copia/pega. Y siguen las buenas noticias, en el apartado de [migración](https://hexo.io/docs/migration.html), cubre de manera muy cómoda muchas opciones con un simple comando, una maravilla.
+Si empezamos a leer el [tutotial de instalción](https://hexo.io/docs/setup.html), ya notamos que todo está hecho de forma muy sencilla. Si sigues los pasos que te comenta la guía podrás tener rápido y fácilmente tu blog con Hexo. Lo siguiente que me planteo es cómo puedo migrar mi blog actual a Hexo sin pasar por el rudimentario copia/pega. En el apartado de [migración](https://hexo.io/docs/migration.html), cubre de manera muy cómoda muchas opciones con un simple comando, una maravilla.
 
 ## Migración de imagenes
 
-Después de instalar el blog y migrar mi antiguo contenido desde wordpress, comienzo a darme cuenta de algunos problemas, el contenido de algunos bloques de código que estaban hechos con un plugin no se han migrado bien, algunos ha desaparecido, algunos han perdido el estilo y otros han quedado como si nada, problema que aún no he arreglado :(.
-
-El siguiente problema fue la imagenes, el fichero de exporatción de wordpress extrae las imagenes con url absolutas, y mi objetivo era apagar el antiguo servidor, entonces lo que hice fue usar grep para extraer de los ficheros debajo de /source/_post las urls de las imagenes.
+Después de instalar el blog y migrar mi antiguo contenido desde wordpress, comienzo a darme cuenta de algunos problemas como el contenido de algunos bloques de código que estaban hechos con un plugin y no se han migrado bien, pues incluso algunos han desaparecido, mientras que otros han perdido el estilo o han quedado como si nada, problema que aún no he arreglado :(.
+El siguiente problema que encontré fue las imágenes. El fichero de exportación de wordpress extrae las imágenes con url absolutas, y mi objetivo era apagar el antiguo servidor, entonces lo que hice fue usar grep para extraer de los ficheros debajo de /source/_post las urls de las imágenes.
 
 {% codeblock lang:sh Extraer las urls de todas las imagenes%}
 	grep -i "http://juandavidvega.es/blog/wp-content/uploads"  source/_posts/* > .old-blog/images/urls
@@ -37,7 +36,7 @@ Directorio 	Imagen
 2015/04/ 	2-1.png
 ...
 
-Teniendo esto lo que hice fue un script que por cada linea, creará el árbol de directorio, y descargará la imagen. Para la entrada _2015/04/_ 	_1-1.png_ crearía un directorio 2015 con el subdirectorio 04 y guardará ahí la imagen 1-1.png
+Teniendo esto, lo que hice fue un script que por cada línea que creará el árbol de directorio y descargará la imagen. Para la entrada _2015/04/_ _1-1.png_ crearía un directorio 2015 con el subdirectorio 04 y guardará ahí la imagen 1-1.png
 
 {% codeblock lang:sh Descargar las images%}
 #!/bin/bash
@@ -54,15 +53,15 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
 done < urls #fichero de urls
 {% endcodeblock %}
 
-Con esto tenía las imagenes pero los post seguian referenciando a las antiguas, pues volvía a usar Find/Replace con Regex, la opción de usar un comando como sed, combinado con grep o alguna otra automatización me echaba para atras por el tema de que se podía liar una buena. 
+Con esto tenía las imágenes, pero los post seguían referenciando a las antiguas pues volvía a usar Find/Replace con Regex. La opción de usar un comando como sed, combinado con grep o alguna otra automatización me echaba para atrás por el tema de que se podía “liar” una buena.
 
-Despúes de cambiar todas las urls absolutas que apuntaban al antiguo wordpres por "/images/" lo siguiente fue copiar lo descargado a la carpeta source/images.
+Después de cambiar todas las urls absolutas que apuntaban al antiguo wordpres por “/images/“, lo siguiente fue copiar lo descargado a la carpeta source/images.
 
 ## Despliege
 
-Después de todo esto, tenía que desplegar y de nuevo fui a la web de Hexo que tiene una [docu](https://hexo.io/docs/deployment.html) para despliege, como con todo muy masticado y cómodo. En mi caso elegí GitHub Pages. 
+Tras esto, tenía que desplegar y de nuevo fui a la web de Hexo que tiene una [documentación](https://hexo.io/docs/deployment.html) para despliege, como con todo, muy masticado y cómodo. En mi caso elegí GitHub Pages.
 
-Algo que no me gustaba es que los desplieges son de estaticos ya generados, que es el contenido de la web final. En internet hay quien suguiere usar un repo separado para los sources, pero mi opción ha sido pushear los sources a una rama de timestamp en cada despliegue.
+Algo que no me gustaba es que los despliegues son de estáticos ya generados, que es el contenido de la web final. En internet hay quien sugiere usar un repo separado para los sources, pero mi opción ha sido pushear los sources a una rama de timestamp en cada despliegue.
 
 {% codeblock lang:sh Script de deploy %}
 message="deployed at "$(date +%F) 
@@ -79,13 +78,14 @@ El comando **hexo generate -d** es lo único necesario para generar y desplegar,
 
 ## El dominio, Analitycs y Disqus
 
-Para configurar el dominio me hice un poco un lio, por que mi dominio apuntaba a un servidor de dns y yo puse el fichero de zona en otro, casi me vuelvo loco. A parte de eso, la configuración es muy sencilla como explica la [docu de Github Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/), lo primero es crear un fichero [CNAME](https://github.com/jdvr/jdvr.github.io/blob/1465453233/source/CNAME) en el directorio source. Luego vas a gestión avanzada de tu zona DSN y añades tres registros, dos registros A (192.30.252.153, 192.30.252.154) y uno CNAME con www. No te olvides de borrar los antiguos registros A que sean tudominio.com. (o @ que significa lo mismo). Un ejemlo del fichero de zona en Hosteurope sería así:
+La configuración es muy sencilla, como explica la [docu de Github Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/), lo primero es crear un fichero [CNAME](https://github.com/jdvr/jdvr.github.io/blob/1465453233/source/CNAME) en el directorio source. Luego vas a gestión avanzada de tu zona DSN y añades tres registros: dos registros A (192.30.252.153, 192.30.252.154) y uno CNAME con www. No te olvides de borrar los antiguos registros A que sean tudominio.com. (o @ que significa lo mismo). Un ejemplo del fichero de zona en Hosteurope sería así:
 
 [![Ejemplo de fichero de zona](/images/2016/06/zone-file.png)](/images/2016/06/zone-file.png)
 
-Para añadir analitics es muy sencillo, una vez tengas el identificador de analitycs estilo *UA-XXXXX*, tienes que verificar si tu tema soporta analitycs (busca en la carpeta de sources algun referencia a analitycs), si es así solo ve al fichero de configuración y añade el aparametro google-analitycs (o como sea que tu tema lo tenga tipicado), en mi caso, el tema no lo soportaba, así que he hecho un fork y lo he añadido yo mismo, [es muy sencillo de hacer](https://github.com/jdvr/hexo-theme-again/commit/1eb28a7ae30cc1b4d0c233537b96d9ec07734fea), apenas son 5 minutos.
+Para añadir analitics es muy sencillo puesto que una vez tengas el identificador de analitycs estilo *UA-XXXXX*, tienes que verificar si tu tema soporta analitycs (busca en la carpeta de layout algun referencia a analitycs). Si es así, sólo ve al fichero de configuración y añade el parámetro google-analitycs (o como sea que tu tema lo tenga definido). En mi caso, el tema no lo soportaba, así que he hecho un fork y lo he añadido yo mismo, [es muy sencillo de hacer](https://github.com/jdvr/hexo-theme-again/commit/1eb28a7ae30cc1b4d0c233537b96d9ec07734fea), apenas son 5 minutos.
 
-Con Disqus pasa lo mismo que no analitycs, normalmente todo los temas lo soportan, en mi caso el mio lo soportaba y fue tan fácil como añadir en el config el parámetro *disqus_shortname*
+Con Disqus pasa lo mismo que con analitycs. Normalmente todo los temas lo soportan,  como fue mi caso en el que lo soportaba, y fue tan fácil como añadir en el config el parámetro *disqus_shortname*.
 
-En resumen, si tienes un pequeño blog (como el mio), que escribo por hobbit, desde mi punto de vista se gana mucho tiempo y comodidad. además no creo que crecer demasiado sea un problema por que al final en producción solo hay estáticos y en el momento de genrar, Hexo asegura que pueden generar miles de estáticos en unos pocos segundos.
+En resumen, si tienes un pequeño blog (como el mío), en el que escribes por hobby, se gana mucho tiempo y comodidad. Además, no creo que crecer demasiado sea un problema. En producción solo hay estáticos y en generar miles de ficheros, Hexo asegura que tardar unos pocos segundos.
+
 
