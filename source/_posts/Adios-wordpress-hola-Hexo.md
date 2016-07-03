@@ -1,4 +1,4 @@
-layout: blog
+---
 title: 'Adiós wordpress, hola hexo :)'
 id: 200
 categories:
@@ -10,8 +10,8 @@ tags:
 
 Desde que empecé el blog he estado usando wordpress en un droplet de digital ocean, y siempre por una cosa u otra he tenido algún tipo de problema. Normalmente era la lentitud y a esto se le sumaba que, sin motivo aparente, alguna vez se quedaba pillado el mysql y comenzaba a dar errores 500. Por último, hace algunos post que empecé a escribir en el portátil de camino al trabajo, en el tren y sin internet, lo que hacía muy tediosa la tarea de  estar copiando posteriormente en el editor de wordpress. Así que empecé a buscar y encontré [Hexo](http://hexo.io).
 
-
 <!-- more -->	
+
 
 ## Instalación
 
