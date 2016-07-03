@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title><% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %></title>
   <!-- share on facebook, twitter, etc.. -->
-  <meta property="og:image" content="<%- url_for(theme.avatar) %>" />
+  <meta property="og:image" content="<%= theme.url%><%- url_for(theme.avatar) %>" />
   <meta property="og:title" content="<% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %>" />
   <meta property="og:description" content="<%= theme.subtitle %>" />
 
