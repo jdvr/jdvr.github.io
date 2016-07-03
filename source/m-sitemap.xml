@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://juandavidvega.es/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/./</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/archives/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2016/06/05/Adios-wordpress-hola-Hexo/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2016/05/11/Experimentando-con-programacion-reactiva/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2016/04/10/incluyendo-base-de-datos-embebida/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/12/06/springboot-y-stomp-aplicaciones-web-interactivas-con-websocket/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/07/05/notificaciones-push-navegador/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/12/06/mi-paso-por-cas-y-el-paso-de-la-cas-por-mi/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/11/08/pair-programming-mi-guia-practica/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/10/04/node-js-nodeschool-tutoriales-diferentes/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/09/27/apprenticeship-patterns/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/09/06/extrayendo-informacion-de-una-web-de-manera-automatica-17track-net/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/08/16/echando-cuentas/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/08/09/mama-quiero-ser-programador/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/04/14/calistenia-de-objetos-object-calisthenics/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/03/14/github-pet-projects-visibility/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/02/14/spark-rest-api-en-java/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>http://juandavidvega.es/2015/02/06/goals/</loc>
+  <lastmod>2016-07-03T08:08:03+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>
