@@ -6,7 +6,7 @@
   <!-- share on facebook, twitter, etc.. -->
   <meta property="og:image" content="<%- url_for(theme.avatar) %>" />
   <meta property="og:title" content="<% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %>" />
-  <meta property="og:description" content="<% if (page.excerpt){ %><%= page.excerpt %> | <% } %><%= theme.subtitle %>" />
+  <meta property="og:description" content="<%= theme.subtitle %>" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="<%- url_for(theme.favicon) %>">
