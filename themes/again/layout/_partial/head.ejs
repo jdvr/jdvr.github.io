@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <title><% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %></title>
   <!-- share on facebook, twitter, etc.. -->
-  <meta property="og:image" content="<%= theme.url%><%- url_for(theme.avatar) %>" />
-  <meta property="og:title" content="<% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %>" />
-  <meta property="og:description" content="<%= theme.subtitle %>" />
+  <meta property="og:image"  itemprop="image primaryImageOfPage" content="<%= theme.url%><%- url_for(theme.avatar) %>" />
+  <meta name="twitter:title" property="og:title" itemprop="title name" content="<% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %>" />
+  <meta name="twitter:description" itemprop="description" property="og:description" content="<%= theme.subtitle %>" />
+  <meta property="og:url" content="<%= page.url %>" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:domain" content="<%= theme.url%>"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="<%- url_for(theme.favicon) %>">
