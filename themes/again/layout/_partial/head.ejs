@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
   <meta charset="utf-8">
   <title><% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %></title>
+  <!-- share on facebook, twitter, etc.. -->
+  <meta property="og:image" content="<%- url_for(theme.avatar) %>" />
+  <meta property="og:title" content="<% if (page.title){ %><%= page.title %> | <% } %><%= theme.title %>" />
+  <meta property="og:description" content="<% if (page.excerpt){ %><%= page.excerpt %> | <% } %><%= theme.subtitle %>" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="shortcut icon" href="<%- url_for(theme.favicon) %>">
   <link rel="stylesheet" id="font-awesome-css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen">
