@@ -25,7 +25,7 @@ La kata elegida es [RPGCombatKata](http://www.slideshare.net/DanielOjedaLoisel/r
 
 Para comunicar los dos tipos de clases que tenemos, está el [bus](https://github.com/jdvr/RxJava-RPGCombatKata/blob/master/src/main/java/es/juandavidvega/rpgcombat/engine/events/EventBus.java). Es el punto común de ambos objetos, así si un objeto quiere recibir eventos de ataque, se suscribe al bus.
 
-En el caso de los eventos eventos que se publican en el bus, y que son recibidos por todos los suscriptores es donde entra en juego todo el set de funciones que nos ofrece RxJava. 
+En el caso de los eventos que se publican en el bus, y que son recibidos por todos los suscriptores es donde entra en juego todo el set de funciones que nos ofrece RxJava. 
 
 Uno de los elementos de juego es que un personaje, puede lazar un ataque sobre otro.  Cuando se crea un personaje, este suscribe a los eventos de ataque que se publiquen en el bus, y para eso aplica funciones de mapeo y filtrado sobre el stream que nos ofrece el bus.
 
@@ -65,7 +65,7 @@ public <T> Observable<T>  streamOf(EventType type) {
 
 {% endcodeblock %}
 
-Cuando se hace una llamada al bus, se indica el tipo de envento sobre el que se quiere el stream, en esa primera llamada se filtran todos los eventos genéricos a los que sean del tipo que se solicita en *streamOf*  y se mapea el stream para que sea un stream del tipo de evento solicitado. Teniendo un stream del tipo *Damage* se aplica un filtro para eliminar todos aquellos que no sean dirigidos a ese personaje, y por ultimo se aplica la suscripción. 
+Cuando se hace una llamada al bus, se indica el tipo de evento sobre el que se quiere el stream, en esa primera llamada se filtran todos los eventos genéricos a los que sean del tipo que se solicita en *streamOf*  y se mapea el stream para que sea un stream del tipo de evento solicitado. Teniendo un stream del tipo *Damage* se aplica un filtro para eliminar todos aquellos que no sean dirigidos a ese personaje, y por ultimo se aplica la suscripción. 
 
 En el objeto _subscriptions_ tenemos todas las suscripciones de un personaje, y cuando este muere, se eliminan todas y así se elimina la posibilidad de recibir, ataques, curas, unión a facciones, etc.
 
