@@ -5,4 +5,4 @@ git commit -m "$message"
 git checkout -b $branch
 git push -u origin $branch
 git checkout master
-sudo hexo generate -d
+hexo generate -d

@@ -15,7 +15,7 @@ Desde que empecé el blog he estado usando wordpress en un droplet de digital oc
 
 ## Instalación
 
-Si empezamos a leer el [tutotial de instalción](https://hexo.io/docs/setup.html), ya notamos que todo está hecho de forma muy sencilla. Si sigues los pasos que te comenta la guía podrás tener rápido y fácilmente tu blog con Hexo. Lo siguiente que me planteo es cómo puedo migrar mi blog actual a Hexo sin pasar por el rudimentario copia/pega. En el apartado de [migración](https://hexo.io/docs/migration.html), cubre de manera muy cómoda muchas opciones con un simple comando, una maravilla.
+Si empezamos a leer el [tutorial de instalción](https://hexo.io/docs/setup.html), ya notamos que todo está hecho de forma muy sencilla. Si sigues los pasos que te comenta la guía podrás tener rápido y fácilmente tu blog con Hexo. Lo siguiente que me planteo es cómo puedo migrar mi blog actual a Hexo sin pasar por el rudimentario copia/pega. En el apartado de [migración](https://hexo.io/docs/migration.html), cubre de manera muy cómoda muchas opciones con un simple comando, una maravilla.
 
 ## Migración de imagenes
 
