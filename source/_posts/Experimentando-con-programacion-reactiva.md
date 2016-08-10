@@ -74,10 +74,10 @@ En el objeto _subscriptions_ tenemos todas las suscripciones de un personaje, y 
 
 El primer punto importante es lo complicado que resulta cambiar la mente para pensar en todo como un stream al que se puede suscribir una clase, a pesar de eso me ha encantado este experimento sería un placer intentar realizar algún proyecto con esta tecnología.
 
-El único problema que he tenido es durante el desarrollo de los test, primero empecé usando un bus asíncrono.  Esto me resultaba imposible, habia algun test que pasaba a veces si y a veces no, un sin sentido. Luego decidi por cambiar a un bus síncrono y un singleton. El problema de eso fue que se me mezclaban los eventos de diferentes test y según el orden algunos test fallaban. Por suerte, esto último fue sencillo de solucionar, creaba un instancia en el before que luego destruía en el after.
+El único problema que he tenido es durante el desarrollo de los test, primero empecé usando un bus asíncrono.  Esto me resultaba imposible, había algún test que pasaba a veces si y a veces no, un sin sentido. Luego decidí por cambiar a un bus síncrono y un singleton. El problema de eso fue que se me mezclaban los eventos de diferentes test y según el orden algunos test fallaban. Por suerte, esto último fue sencillo de solucionar, creaba un instancia en el before que luego destruía en el after.
 
 ## Links
 
 - [Código completo](https://github.com/jdvr/RxJava-RPGCombatKata)
-- [The introduction to Reactive Programming you have been missin](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
+- [The introduction to Reactive Programming you have been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
 - [RxJava -- Additional Reading](https://github.com/ReactiveX/RxJava/wiki/Additional-Reading)
