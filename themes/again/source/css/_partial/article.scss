@@ -34,4 +34,12 @@ main.post {
     margin-top: 6 * $gutter;
   }
 
+  .article-categories {
+    color: $article-date-color;
+    font-style: italic;
+    a {
+      cursor:pointer;
+    }
+  }
+
 }

@@ -3,5 +3,16 @@
     <%- partial('./_partial/archive', {post: post, index: false}) %>
   <% }) %>
 
+   <section class="article-categories">
+  	<p> Categories </p>
+	<%
+	    var categories = [];
+	    site.categories.forEach(function(category){
+	        categories.push('<a href="' + config.root + category.path + '"> #' + category.name + '</a>');
+	    });
+	%>
+	<%- categories.join(' ') %>
+  </section>
+
   <%- partial('./_widget/paginator') %>
 </main>

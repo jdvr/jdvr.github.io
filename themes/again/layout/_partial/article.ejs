@@ -10,4 +10,16 @@
   <section class="article-entry">
     <%- post.content %>
   </section>
+
+  <section class="article-categories">
+  	<p> Categories </p>
+	<%
+	    var categories = [];
+	    post.categories.forEach(function(category){
+	        categories.push('<a href="' + config.root + category.path + '"> #' + category.name + '</a>');
+	    });
+	%>
+	<%- categories.join(' ') %>
+  </section>
+
 </article>
