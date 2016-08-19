@@ -15,7 +15,7 @@ El acceso que siempre suele estar habilitado es por FTP, así que voy a explicar
 <!-- more -->
 ## LFTP: FTP de manera cómoda 
 
-Mi script de despliegue, tiene tres partes, en la primera historifico la antigua carpeta "deploy/next" y luego copio lo fichero del próximo deploy a "deploy/next", la segunda es generar un release con git y por último la subida al FTP:
+Mi script de despliegue, tiene tres partes, en la primera historifico la antigua carpeta "deploy/next" y luego copio los ficheros del próximo deploy a "deploy/next", la segunda es generar un release con git y por último la subida al FTP:
 
 {% codeblock lang:sh Script de despliegue%}
 #!/bin/bash
@@ -49,7 +49,7 @@ Si el _TARGETDIR_ es "/public_html/target/" y el contenido de la carpeta "./next
     |_example.file
 {% endcodeblock %}
 
-Por el contratio, si el _TARGETDIR_ es "/public_html/target" y el contenido de la carpeta "./next/" fuera "example.file" el resultado sería:
+Por el contrario, si el _TARGETDIR_ es "/public_html/target" y el contenido de la carpeta "./next/" fuera "example.file" el resultado sería:
 
 {% codeblock lang:sh Resultado%}
 /public_html/target/  
