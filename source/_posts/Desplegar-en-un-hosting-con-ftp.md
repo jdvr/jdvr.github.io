@@ -1,5 +1,6 @@
 ---
 title: Desplegar en un hosting con ftp
+cover: /images/2016/08/cover-ftp.jpg
 date: 2016-08-19 17:28:19
 id: 204
 categories:
