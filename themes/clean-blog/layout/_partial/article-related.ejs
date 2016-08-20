@@ -1,0 +1,10 @@
+<div class="col-lg-6 col-md-6">
+	<% if (item.prev) { %>
+		<a href="<%- url_for(item.prev.path)%>" > <%- item.prev.title %></a>
+	<% } %>
+</div>
+<div class="col-lg-6 col-md-6">
+	<% if (item.next) { %>
+		<a href="<%- url_for(item.next.path)%>" ><%- item.next.title %></a>
+	<% } %>
+</div>

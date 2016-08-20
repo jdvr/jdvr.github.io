@@ -1,0 +1,32 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+  Github:
+    url: https://github.com/jdvr
+    icon: github
+
+# Title on top left of menu. Leave empty to use main blog title
+menu_title: Juan David Vega Rodríguez
+
+# URL of the Home page image
+index_cover: images/banner-large.jpg
+default_cover: /images/banner-large.jpg #for post
+
+# Default post title
+default_post_title: Untitled
+
+# Comments. Choose one by filling up the information
+comments:
+  # Disqus comments
+  disqus_shortname: juandavidvega
+# Google Analytics Tracking ID
+google_analytics: UA-78972584-1
+
+#Social Accounts
+twitter_url: https://twitter.com/juandvegarguez
+twitter_handle:
+facebook_url:
+github_url: https://github.com/jdvr
+gitlab_url:
+linkedin_url: https://es.linkedin.com/in/juandavidvegarguez

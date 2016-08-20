@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Juan David Vega 
-subtitle: My life as a coder line by line
-description: My life as a coder line by line
+title: My life as a coder
+subtitle: "The knowledge and The happiness: The more you share the more you receive"
+description: My life as a coder
 author: Juan David Vega
 language: es
 timezone: Europe/Madrid
@@ -66,7 +66,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 #theme: landscape
-theme: again
+theme: clean-blog
 
 
 # Deployment
