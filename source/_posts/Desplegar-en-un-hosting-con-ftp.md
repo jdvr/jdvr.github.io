@@ -16,7 +16,7 @@ El acceso que siempre suele estar habilitado es por FTP, así que voy a explicar
 <!-- more -->
 ## LFTP: FTP de manera cómoda 
 
-Mi script de despliegue, tiene tres partes, en la primera historifico la antigua carpeta "deploy/next" y luego copio los ficheros del próximo deploy a "deploy/next", la segunda es generar un release con git y por último la subida al FTP:
+Mi script de despliegue tiene tres partes: en la primera historifico la antigua carpeta "deploy/next" y luego copio los ficheros del próximo deploy a "deploy/next", la segunda es generar un release con git y por último la subida al FTP:
 
 {% codeblock lang:sh Script de despliegue%}
 #!/bin/bash
@@ -38,7 +38,8 @@ TARGETDIR="/public_html/target";
 lftp -c "open -u $FTP_USER,$FTP_PASSWORD $SITE $DISABLE_SSL  mirror -R $SOURCEDIR $TARGETDIR"
 {% endcodeblock %}
 
-[LFTP](https://lftp.yar.ru/) es un programa que facilita mucho el uso de ftp, la opción -c nos permite pasar una lista de comandos a ejecutar, los comandos son: "open" con la opción -u el usuario y la contraseña, luego desactivo el ssl y por ultimo el comando mirror con la opción -R que lo que hace es duplicar el contenido de un directorio local en uno remoto.
+[LFTP](https://lftp.yar.ru/) es un programa que facilita mucho el uso de ftp, la opción -c nos permite pasar una lista de comandos a ejecutar, los comandos son: 
+"open" con la opción -u y el usuario y la contraseña, luego desactivo el ssl y por último el comando mirror con la opción -R que lo que hace es duplicar el contenido de un directorio local en uno remoto.
 
 Para que duplique el contenido del directorio local en el remoto, hay que usar el directorio remoto sin "/" al final, si en mi script cambio el _TARGETDIR_ a "/public_html/target/" en el servidor se crearía una carpeta next con su contenido.
 
