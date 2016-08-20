@@ -20,18 +20,19 @@ Ejemplo de Hoja:
 [![sheetexample](/images/2015/08/sheetexample.jpg)](/images/2015/08/sheetexample.jpg)
 
 Y este sería un ejemplo del correo resultante:
-> Comcepto 1: 219.51 EURO
-> 
-> Concepto 4: 139.91 EURO
-> 
-> Concepto 34: 40 EURO
-> 
-> Concepto 42: 49 EURO
-> 
-> 
-> Total de gastos: 530.27 EURO
+-Comcepto 1: 219.51 EURO
+-
+-Concepto 4: 139.91 EURO
+-
+-Concepto 34: 40 EURO
+-
+-Concepto 42: 49 EURO
+-
+-
+-Total de gastos: 530.27 EURO
 Hasta ahora me esta siendo bastante útil, y además es bastante simple:
-<pre class="lang:js decode:true">/**
+{% codeblock lang:javascript Función %}
+/**
  * Return the total of concept in a sheet.
  *
  * @param {concept} input The concept to be found and acumulate the total.
@@ -86,7 +87,8 @@ function sendReportByEmail(){
   for(var i = 0; i &lt; emails.length; i++)
     MailApp.sendEmail(emails[i], "Informe de gastos", message);
 
-}</pre>
+}
+{% endcodeblock %}
 La utilización de la API de Google Sheet, esta relativamente bien documentada  y existen varios ejemplos.
 
 &nbsp;
