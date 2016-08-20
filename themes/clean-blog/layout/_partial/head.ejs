@@ -49,7 +49,9 @@
     <% if (page.share_cover) { %>
         <meta property="og:image" content="<%= config.url %><%= page.share_cover %>" />
     <% } else if (config.cover) { %>
-        <meta property="og:image" content="<%= config.url %><%= config.cover %>"/>
+        <meta property="og:image" content="<%= config.url %><%= config.cover %>"/>    
+    <% } else if (page.cover) { %>
+        <meta property="og:image" content="<%= config.url %><%= page.cover %>"/>
     <% } else { %>
         <meta property="og:image"  itemprop="image primaryImageOfPage" content="<%= theme.url%><%- theme.default_cover%>" />
     <% }  %>
