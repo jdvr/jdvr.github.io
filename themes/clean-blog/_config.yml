@@ -2,6 +2,7 @@
 menu:
   Home: /
   Archives: /archives
+  Images: /headers
   Github:
     url: https://github.com/jdvr
     icon: github
