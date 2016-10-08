@@ -12,13 +12,13 @@ categories:
 tags:
 ---
 
-Hace poco me ha surgido la necesidad de generar un pdf de una pequeña parte de la página, de algo así como el "carrito" de la aplicación. Tal como tenía hechas las plantillas, era bastante complicado generar un pdf solo de ese contenido, sin repetir alguna plantilla y a eso se le añadía el problema de mantener exactamente el mismo estilo.
+Hace poco me ha surgido la necesidad de generar un PDF de una pequeña parte de la página, de algo así como el "carrito" de la aplicación. Tal como tenía hechas las plantillas, era bastante complicado generar un PDF solo de ese contenido, sin repetir alguna plantilla y a eso se le añadía el problema de mantener exactamente el mismo estilo.
 
-Así que después de investigar un poco por allí y por aquí, vi que existía [jsPDF](https://github.com/MrRio/jsPDF/), una solución sencilla para generar pdf en el navegador. El único problema era que no interpreta el css del html, así que el pdf es bastante feo y no mantiene estilos y además no incluye las imágenes.
+Así que después de investigar un poco por allí y por aquí, vi que existía [jsPDF](https://github.com/MrRio/jsPDF/), una solución sencilla para generar un PDF en el navegador. El único problema era que no interpreta el CSS del HTML, así que el PDF es bastante feo y no mantiene estilos y además no incluye las imágenes.
 
 ## ¿Y ahora que? sin estilos, sin imágenes, sin iconos...
 
-A partir de aquí la idea que tuve fue sencilla, si podía sacar una _foto_ de como lo ve el usuario en el navegador, jsPDF me permite incluir como contenido imágenes. Así que investigando como hacer esto encontré [html2canvas](http://http://github.com/niklasvh/html2canvas), una solución con una API simple para convertir una parte del html *que se ve en la página* a una imagen, vamos un screenshot, le pasas un elemento del dom y te devuelve un canvas con el mismo contenido dibujado dentro.
+A partir de aquí la idea que tuve fue sencilla, si podía sacar una _foto_ de como lo ve el usuario en el navegador, jsPDF me permite incluir como contenido imágenes. Así que investigando como hacer esto encontré [html2canvas](http://http://github.com/niklasvh/html2canvas), una solución con una API simple para convertir una parte del HTML *que se ve en la página* a una imagen, vamos un screenshot, le pasas un elemento del DOM y te devuelve un canvas con el mismo contenido dibujado dentro.
 
 ```javascript Dibujas el contenido en un canvas
 var contract = $(selectors.CONTRACT_PREVIEW);
@@ -32,7 +32,7 @@ html2canvas(contract,{
 });
 ```
 
-## Generar un pdf con una imagen
+## Generar un PDF con una imagen
 
 Como se puede ver en el script de arriba, una vez obtengo el canvas lo que hago es extraerlo como una imagen. Luego para añadir la imagen es tan simple como:
 
@@ -45,7 +45,7 @@ pdf.addImage(img,'PNG', 0, 0);
 pdf.save(contract.id + "_contract.pdf");
 ```
 
-Es decir cuando el cliente da a _exportar como pdf_ mi función completa queda de la siguiente manera:
+Es decir cuando el cliente da a _exportar como PDF_ mi función completa queda de la siguiente manera:
 
 ```javascript Proceso completo html -> Canvas -> img -> pdf
 var contractPreview = $(selectors.CONTRACT_PREVIEW);
