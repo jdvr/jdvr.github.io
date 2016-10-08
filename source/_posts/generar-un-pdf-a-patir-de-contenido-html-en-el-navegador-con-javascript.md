@@ -42,8 +42,7 @@ var pdf = new jsPDF({
   format:'a4'
 });
 pdf.addImage(img,'PNG', 0, 0);
-pdf.save(contract.id + "_contract.pdf")
-contract.width(cache_width);
+pdf.save(contract.id + "_contract.pdf");
 ```
 
 Es decir cuando el cliente da a _exportar como pdf_ mi función completa queda de la siguiente manera:
