@@ -20,7 +20,7 @@ On this point I started to look for a static site generator on google and I foun
 
 ## The basic setup
 
-After read the Mustache.js [documentation](https://github.com/janl/mustache.js/) I decide to use the Command Line Tool to generate the html files.  I am going to skip the explanation about the npm dependencies and package.json setup and lets start at [this point](https://github.com/jdvr/mustache-static-website/tree/e320fead9d62f77b30aa6dbf1251e5347b7834ee) with the package.json and the basic files. As dependencies we have Mustache, npm-watch and buildify, although some of them seem useless now, they will have an explanation on next paragraph. At this point, we have two scripts generate.js, and generate-command.js and two folders tpl and generable-pages.  This dependencies and structure is the process of the  development but I am skipping the steps that lead me to this, to focus just on the result.
+After read the Mustache.js [documentation](https://github.com/janl/mustache.js/) I decide to use the Command Line Tool to generate the html files.  I am going to skip the explanation about the npm dependencies and package.json setup and lets start at [this point](https://github.com/jdvr/mustache-static-website/tree/e320fead9d62f77b30aa6dbf1251e5347b7834ee) with the package.json and the basic files. As dependencies we have Mustache, npm-watch and buildify, although some of them seem useless now, they will have an explanation on next paragraph. Now we have two scripts generate.js and generate-command.js and two folders tpl and generable-pages.  This dependencies and structure is the process of the  development but I am skipping the steps that lead me to this, to focus just on the result.
 
 ## The templates and The views 
 
