@@ -7,6 +7,7 @@ date: 2016-10-07 21:08:39
 categories:
   - pet
   - work
+  - side
   - projects
   - node
   - javascript
