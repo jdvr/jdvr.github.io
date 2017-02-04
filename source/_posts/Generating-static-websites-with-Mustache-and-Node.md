@@ -139,6 +139,16 @@ One of the requirements of Mustache cli is a json file that contains the view, t
 
 At this point I found [buildify](https://github.com/powmedia/buildify), this tool allows me to set a base template and then insert a list of files as the template body. I just have to create a json file for each part of the page and then join them all on a single file before the command is execute. Thats why i specify a name and a few partials in the generation model.
 
+## Generating the site
+
+After all, to generate the html files that you have declared on _generable-pages_ files you just have to run this:
+
+```sh
+npm generate
+```
+
+This use npm scripts to run the _generate.js_ script.
+
 
 ## The summary
 
