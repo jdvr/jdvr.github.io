@@ -157,3 +157,5 @@ The tpl folder contains the target templates, like index.mustache and his partia
 With this, I can create any kind of static sites, without themes limits, not oriented to any kind of project (like blog or landing pages), and the result can be easily adapt to a non-static server render project without to much effort.
 
 I hope you like this project, it will be a pleasure for me to hear any feedback about this and answer any question.
+
+You can find a getting started set up [here](https://github.com/jdvr/mustache-static-website)
