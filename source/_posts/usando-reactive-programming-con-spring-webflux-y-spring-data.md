@@ -20,9 +20,9 @@ Sin complicarme demasiado y dejando a un lado la originalidad, mi objetivo era c
 
 ## Spring WebFlux
 
-Mientras que a nivel de código (que explicaré más adelante) y por la abstracción que proporciona Spring (aka _Magia Negra_) apenas encontramos diferencias, la realidad es que tienen una orientación completamente distinta, Spring WebFlux está orientado al uso de contenedores de aplicaciones no bloqueantes (Netty en mi caso), Estos contenedores funcionan con un  loop de eventos sin bloquear nunca la entrada/salida y sirviendo de manera asíncrona.
+Mientras que a nivel de código (que explicaré más adelante) y por la abstracción que proporciona Spring (aka _Magia Negra_) apenas encontramos diferencias. La realidad es que tienen una orientación completamente distinta. Spring WebFlux está orientado al uso de contenedores de aplicaciones no bloqueantes (Netty en mi caso). Estos contenedores funcionan con un  loop de eventos sin bloquear nunca la entrada/salida y sirviendo de manera asíncrona.
 
-Al declarar un controlador podremos seguir usando la anotación _"@RestController"_ que se comportará como siempre y por supuesto dentro de un controlador incluiremos las rutas como métodos usando la anotación de método _"@GetMapping"_ que a diferencia del mapeo clásico, por defecto     produce un _event-stream_ como respuesta del Content-ype del http.
+Al declarar un controlador podremos seguir usando la anotación _"@RestController"_ que se comportará como siempre y por supuesto dentro de un controlador incluiremos las rutas como métodos usando la anotación de método _"@GetMapping"_ que a diferencia del mapeo clásico, por defecto     produce un _event-stream_ como respuesta del Content-type del http.
 
 ```java Controlador para cargar todas las tareas existentes
 
@@ -45,26 +45,26 @@ public class SubscribeToAllTask {
 
 ```
 
-Lo destacable de este controlador es que devuelve un [Flux](https://github.com/reactor/reactor-core#flux), Al devolver un flux de _Task_ y con el Content-Type como _"text/event-stream"_ **lo que hacemos es enviar de manera asíncrona como datos en un stream las tareas que hay al navegador, que las recibe como [Server-sent Events](https://en.wikipedia.org/wiki/Server-sent_events) y deja un canal abierto de una sola dirección entre servidor y cliente.**
+Lo destacable de este controlador es que devuelve un [Flux](https://github.com/reactor/reactor-core#flux). Al devolver un flux de _Task_ y con el Content-Type como _"text/event-stream"_ **lo que hacemos es enviar de manera asíncrona como datos en un stream las tareas que hay al navegador. Que las recibe como [Server-sent Events](https://en.wikipedia.org/wiki/Server-sent_events) y deja un canal abierto de una sola dirección entre servidor y cliente.**
 
 Este Stream de datos abierto nos permite realizar operaciones de manera asíncrona e ir informando al cliente del estado. Por ejemplo, para la creación de una nueva tarea lo que hago es devolver un Flux de _OperationStatus_ un enumerado que incluye Start, Complete y Error, de esta manera cuando se recibe la petición se crea un flux en el que se publica un _OperationStatus_ que es _Start_ y de manera asíncrona se gestiona el resto de la lógica de creación.
 
 ```java Lógica para crear una tarea
 public Flux<OperationStatus> create (NewTask newTask) {
-    Mono<Team> teamMono = teamRetriever.finByName(newTask.getTeamName());
+    Mono<Team> teamMono = teamRetriever.findByName(newTask.getTeamName());
     LocalDateTime dueDate = LocalDate.parse(newTask.getDueDate(), DateTimeFormatter.ISO_LOCAL_DATE).atStartOfDay();
     // async block
-    Consumer<? super FluxSink<OperationStatus>> statusEmitter = e -> {
-        e.next(OperationStatus.START); //first status emitted
+    Consumer<? super FluxSink<OperationStatus>> statusEmitter = stream -> {
+        stream.next(OperationStatus.START); 
         teamMono.subscribe(t -> {
             Mono<Task> saved = taskStorer.save(new Task("", t, dueDate, newTask.getTitle()));
             saved.subscribe(savedTask -> {
-                e.next(OperationStatus.SUCCESS); // async status emmit on save task
-                e.complete(); // mark stream as completed
+                stream.next(OperationStatus.SUCCESS); 
+                stream.complete(); 
             }, error -> {
-                e.next(OperationStatus.ERROR);
-                e.error(error);
-                e.complete();
+                stream.next(OperationStatus.ERROR);
+                stream.error(error);
+                stream.complete();
             });
         });
     };
