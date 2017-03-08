@@ -9,8 +9,9 @@ categories:
   - Spring WebFlux
   - Spring Data
   - Mongo
-  - pet
   - Reactive Programming
+  - Spring Boot
+  - tutorial
 tags:
 ---
 
