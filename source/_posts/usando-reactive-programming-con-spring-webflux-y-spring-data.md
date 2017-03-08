@@ -79,6 +79,10 @@ La búsqueda del equipo es también asíncrona ya que se usa un repositorio reac
 
 Cuando una nueva tareas es creada si alguien ha llamado al primer _endpoint_ que puse del controlador para subscribirse a todas las tareas automáticamente la nueva tarea es publicada en el stream de datos entre el servidor y el cliente. Obtenemos un push de las nuevas entidades directamente al cliente.
 
+[![Al enviar la petición desde el postman al servidor aparecen los datos en el navegador](/images/2017/03/1-1.gif)](/images/2017/03/1-1.gif)
+
+_El postman envia una petición para crear la nueva tarea al servidor y este la procesa y la guarda. Una vez guardad la tarea entre el repositorio de MongoDB de Spring Data y Spring WebFlux hacen la magia por nosotros y después de mapear el objeto este se envia al navegador.
+
 ## Lecturas y escrituras reactivas (Spring Data)
 
 [Spring nos da otra capa de abstracción sobre los datos para poder comunicarnos de manera asíncrona y reactiva](https://spring.io/blog/2016/11/28/going-reactive-with-spring-data) con la base de datos, en mi caso he elegido [Spring Data MongoDB](http://projects.spring.io/spring-data-mongodb/).
