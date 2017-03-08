@@ -17,7 +17,7 @@ tags:
 
 Hace una semana leí el [post](https://spring.io/blog/2017/02/23/spring-framework-5-0-m5-update) de la milestone 5 de Spring MVC 5.0 y viendo los avances que habían hecho desde [mi última prueba](https://github.com/jdvr/spring-5-m2-reactive-web-app) de las nuevas características reactivas, decidí aventurarme de nuevo a echar un ojo a ver que nos preparan para las siguientes versiones. Esta vez escogí Spring Boot 2.0 (SNAPSHOT) que será el encargado de incluir en el proyecto Spring Boot las características de **Spring WebFlux** que es como han llamado a esta nueva parte reactiva de Spring.
 
-Sin complicarme demasiado y dejando a un lado la originalidad, mi objetivo era crear un _CRUD_ sobre tareas asignadas a un equipo. Con esto me ha bastando para explorar no solo la capa de routing (_@RestController, @GetMapping, etc.._) sino  también he indagado un poco como funcionará Spring en su capa de persistencia con Spring Data 2.0-Kay.
+Sin complicarme demasiado y dejando a un lado la originalidad, mi objetivo era crear un _CRUD_ sobre tareas asignadas a un equipo. Con esto me ha bastado para explorar no solo la capa de routing (_@RestController, @GetMapping, etc.._) sino  también he indagado un poco como funcionará Spring en su capa de persistencia con Spring Data 2.0-Kay.
 
 ## Spring WebFlux
 
@@ -77,7 +77,7 @@ public Flux<OperationStatus> create (NewTask newTask) {
 
 La búsqueda del equipo es también asíncrona ya que se usa un repositorio reactivo de mongodb, debemos declarar la  búsqueda y subscribirnos al [Mono](https://github.com/reactor/reactor-core#mono) que nos devuelve y esperar recibir el equipo. Cuando recibimos el equipo llamamos a un servicio para guardar la nueva tarea que es tambien asíncrono y debemos suscribirnos para gestionar que se guarde la tarea o que ocurra un error. Todo esto se incluye dentro de un _FluxSink_ que nos permite ir emitiendo estados _"en caliente"_ y mantener el contexto. El código es ampliamente mejorable para evitar indentaciones pero he querido dejarlo así para que se pueda leer junto.
 
-Cuando una nueva tareas es creada si alguien ha llamado al primer _endpoint_ que puse del controlador para subscribirse a todas las tareas automáticamente la nueva tarea es publicada en el stream de datos entre el servidor y el cliente. Obtenemos un push de las nuevas entidades directamente al cliente.
+Cuando una nueva tarea es creada, si alguien ha llamado al primer _endpoint_ que puse del controlador para subscribirse a todas las tareas, automáticamente la nueva tarea es publicada en el stream de datos entre el servidor y el cliente. Obtenemos un push de las nuevas entidades directamente al cliente.
 
 [![Al enviar la petición desde el postman al servidor aparecen los datos en el navegador](/images/2017/03/1-1.gif)](/images/2017/03/1-1.gif)
 
@@ -99,7 +99,7 @@ public Mono<Team> finByName (String name) {
 ```
 <sup>Nota: Podría usar findOneByName(String name) que también devolvería un Mono pero quería hacer un ejemplo concatenando operaciones.</sup>
 
-Para leer todas las tareas y mantener un stream continuo desde el servidor al cliente hay que hacer algo más, no mucho, esto es Spring hacer algo normalmente es añadir una anotación y por supuesto en este caso no decepciona. Para crear un método de lectura que con nada nueva escritura publique un nuevo dato en nuestro stream de datos de lectura abierto tenemos que crear un método find que use un [tailable cursor](https://docs.mongodb.com/manual/core/tailable-cursors/) sobre una [capped collection](https://docs.mongodb.com/manual/core/capped-collections/), es decir, añadir la anotación _"@InfiniteStream"_ en un método en la interfaz.
+Para leer todas las tareas y mantener un stream continuo desde el servidor al cliente hay que hacer algo más, no mucho, esto es Spring hacer algo normalmente es añadir una anotación y por supuesto en este caso no decepciona. Para crear un método de lectura que con cada nueva escritura publique un nuevo dato en nuestro stream de datos de lectura abierto, tenemos que crear un método find que use un [tailable cursor](https://docs.mongodb.com/manual/core/tailable-cursors/) sobre una [capped collection](https://docs.mongodb.com/manual/core/capped-collections/), es decir, añadir la anotación _"@InfiniteStream"_ en un método en la interfaz.
 
 ```java Método de lectura que mantiene un cursor para publicar nuevos elementos
 @InfiniteStream
@@ -137,7 +137,7 @@ public Mono<Task> save(Task task) {
 
 Al crear una nueva tarea si no existe la colección lo que hacemos es crearla de manera bloqueante y con las características que necesitamos para luego invocar  al save sobre la nueva tarea.
 
-El resto de escrituras son más sencillas, por ejemplo para crear un equipo nos basta con llamar al método save del repositorio de Spring Data y subscribirnos al Mono que devuelve **aunque no vayamos a hacer nada con el resultado es obligatorio suscribirse para que se ejecute la operación.**
+El resto de escrituras son más sencillas. Por ejemplo, para crear un equipo nos basta con llamar al método save del repositorio de Spring Data y subscribirnos al Mono que devuelve. **Aunque no vayamos a hacer nada con el resultado es obligatorio suscribirse para que se ejecute la operación.**
 
 
  ```java Escritura más sencilla
