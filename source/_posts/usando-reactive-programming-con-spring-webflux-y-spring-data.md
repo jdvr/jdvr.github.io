@@ -23,7 +23,7 @@ Sin complicarme demasiado y dejando a un lado la originalidad, mi objetivo era c
 
 Mientras que a nivel de código (que explicaré más adelante) y por la abstracción que proporciona Spring (aka _Magia Negra_) apenas encontramos diferencias. La realidad es que tienen una orientación completamente distinta. Spring WebFlux está orientado al uso de contenedores de aplicaciones no bloqueantes (Netty en mi caso). Estos contenedores funcionan con un  loop de eventos sin bloquear nunca la entrada/salida y sirviendo de manera asíncrona.
 
-Al declarar un controlador podremos seguir usando la anotación _"@RestController"_ que se comportará como siempre y por supuesto dentro de un controlador incluiremos las rutas como métodos usando la anotación de método _"@GetMapping"_ que a diferencia del mapeo clásico, por defecto     produce un _event-stream_ como respuesta del Content-type del http.
+Al declarar un controlador podremos seguir usando la anotación _"@RestController"_ que se comportará como siempre. Por supuesto dentro de un controlador incluiremos las rutas como métodos usando la anotación de método _"@GetMapping"_ que a diferencia del mapeo clásico, por defecto     produce un _event-stream_ como respuesta del Content-type del http.
 
 ```java Controlador para cargar todas las tareas existentes
 
@@ -75,13 +75,13 @@ public Flux<OperationStatus> create (NewTask newTask) {
 
 ```
 
-La búsqueda del equipo es también asíncrona ya que se usa un repositorio reactivo de mongodb, debemos declarar la  búsqueda y subscribirnos al [Mono](https://github.com/reactor/reactor-core#mono) que nos devuelve y esperar recibir el equipo. Cuando recibimos el equipo llamamos a un servicio para guardar la nueva tarea que es tambien asíncrono y debemos suscribirnos para gestionar que se guarde la tarea o que ocurra un error. Todo esto se incluye dentro de un _FluxSink_ que nos permite ir emitiendo estados _"en caliente"_ y mantener el contexto. El código es ampliamente mejorable para evitar indentaciones pero he querido dejarlo así para que se pueda leer junto.
+La búsqueda del equipo es también asíncrona ya que se usa un repositorio reactivo de mongodb, debemos declarar la  búsqueda y subscribirnos al [Mono](https://github.com/reactor/reactor-core#mono) que nos devuelve y esperar recibir el equipo. Cuando recibimos el equipo llamamos a un servicio para guardar la nueva tarea que es tambien asíncrono y debemos suscribirnos para gestionar que se guarde la tarea o que ocurra un error. Todo esto se incluye dentro de un _FluxSink_ que nos permite ir emitiendo estados _"en caliente"_ y mantener el contexto. 
 
-Cuando una nueva tarea es creada, si alguien ha llamado al primer _endpoint_ que puse del controlador para subscribirse a todas las tareas, automáticamente la nueva tarea es publicada en el stream de datos entre el servidor y el cliente. Obtenemos un push de las nuevas entidades directamente al cliente.
+Cuando una nueva tarea es creada, si alguien ha llamado al primer _endpoint_ que puse del controlador para subscribirse a todas las tareas. Automáticamente la nueva tarea es publicada en el stream de datos entre el servidor y el cliente. Obtenemos un push de las nuevas entidades directamente al cliente.
 
 [![Al enviar la petición desde el postman al servidor aparecen los datos en el navegador](/images/2017/03/1-1.gif)](/images/2017/03/1-1.gif)
 
-_El postman envia una petición para crear la nueva tarea al servidor y este la procesa y la guarda. Una vez guardad la tarea entre el repositorio de MongoDB de Spring Data y Spring WebFlux hacen la magia por nosotros y después de mapear el objeto este se envia al navegador.
+El postman envia una petición para crear la nueva tarea al servidor y este la procesa y la guarda. Una vez guardada la tarea entre el repositorio de MongoDB de Spring Data y Spring WebFlux hacen la magia por nosotros y después de mapear el objeto este se envía al navegador.
 
 ## Lecturas y escrituras reactivas (Spring Data)
 
@@ -89,7 +89,7 @@ _El postman envia una petición para crear la nueva tarea al servidor y este la 
 
 ### Lecturas
 
-Para leer un registro tenemos los típicos métodos de Spring Data, con una diferencia, **devuelven tipos reactivos que son _lazy_** y tienes que suscribirte para que la operación se ejecute. Para encontrar el equipo por nombre, lo que hago es un "findAll" y luego aplico un filtro para quedarme solo con los que son del mismo nombre y el Flux resultante lo convierto en un Mono al que desde fuera me suscribo para crear la tarea cuando reciba la respuesta.
+Para leer un registro tenemos los típicos métodos de Spring Data, con una diferencia, **devuelven tipos reactivos que son _lazy_** y tienes que suscribirte para que la operación se efectiva. Para encontrar el equipo por nombre, lo que hago es un "findAll" y luego aplico un filtro para quedarme solo con los que son del mismo nombre. El Flux resultante lo convierto en un Mono al que desde fuera me suscribo para crear la tarea cuando reciba la respuesta.
 
 ```java Encontrar un equipo por nombre
 public Mono<Team> finByName (String name) {
@@ -122,7 +122,7 @@ private Task map(es.juandavidvega.entity.Task entity) {
 
 ### Escrituras
 
-La escritura más compleja es crear una nueva tarea, como comenté antes tiene que ser una capped collection entonces al escribir una nueva tarea si la colección no existe tenemos que tener consideración de crearla con esas características.
+La escritura más compleja es crear una nueva tarea, como comenté antes tiene que ser una capped collection. Entonces al escribir una nueva tarea si la colección no existe, tenemos que tener consideración de crearla con esas características.
 
 ```java Crear una tarea cuando no existe la colección
 public Mono<Task> save(Task task) {
