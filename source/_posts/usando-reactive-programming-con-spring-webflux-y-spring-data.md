@@ -1,5 +1,5 @@
 ---
-title: Reactive Web Application con Spring WebFlux y Spring Data
+title: Aplicación con Spring WebFlux y Spring Data
 date: 2017-03-05 11:28:42
 cover: /images/2017/03/telde-por-la-ventana.jpg
 cover_caption: East Gran Canaria coast, Telde, Gran Canaria
