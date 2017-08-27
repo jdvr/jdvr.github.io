@@ -30,7 +30,3 @@ This was my third coderetreat, and every one is different you always learn somet
 I am not able to sit here and write down every thing I had learn on this day. Everyone taught me something different, maybe something related with the way they code or maybe something related with the way the communicate their ideas, at the global the of coderetreat I think we improve every skill that help us as a professional developer, soft skills are also an important part of a good developer.
 
 _Thanks to Software Craftsmanship Madrid members and thanks to idealista's employees who make this possible._
-
-
-<blockquote class="twitter-tweet" data-lang="en" data-conversation="none"><p lang="es" dir="ltr">Todo está bien 🙂</p>&mdash; Manuel Bartual (@ManuelBartual) <a href="https://twitter.com/ManuelBartual/status/901777482625503232">August 27, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
