@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2016/05/11/Experimentando-con-programacion-reactiva/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Experimentando con programación reactiva"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image"  itemprop="image primaryImageOfPage" content="http://juandavidvega.es/images/banner-large.jpg" />
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Experimentando con programación reactiva - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/banner-large.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Experimentando con programación reactiva</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        11-05-2016
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/Programming/">Programming</a>/ <a href="/categories/Programming/Tutorials/">Tutorials</a>/ <a href="/categories/Programming/Tutorials/Kata/">Kata</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Animado por el último post de mi amigo <a href="http://ronnyancorini.es/blog/index.php/2016/05/14/learning-reactive-programming/" target="_blank" rel="external">Ronny</a>, he decidido poner en práctica en una kata y con más tranquilidad la programación reactiva.<a id="more"></a> Mi primera toma de contacto con programación reactiva fue hace algún tiempo cuando <a href="https://github.com/jdvr/DataBaseSchemaDesigner" target="_blank" rel="external">empecé a usar el framework Meteor.js</a>. Esta vez he hecho una kata y he moldeado yo mismo el sistema, no he seguido un tutorial paso a paso, de esta manera siempre se asumen mejor los conceptos.</p>
+<h2 id="¿Que-es-la-programacion-reactiva"><a href="#¿Que-es-la-programacion-reactiva" class="headerlink" title="¿Qué es la programación reactiva?"></a>¿Qué es la programación reactiva?</h2><p>Es la programación orientada a streams de datos sobre los que se pueden aplicar innumerables funciones de filtrado, mapeo, combinación,  y por último subscribirse. Todos los streams son observables (patrón observer),  el concepto se explica de maravilla <a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754" target="_blank" rel="external">aquí</a>. </p>
+<p>Para trabajar con streams de datos y todo un set de funciones, tenemos las <a href="https://github.com/ReactiveX" target="_blank" rel="external">Reactive Extensions</a>, la versión de <a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">Java</a> es un port hecho por Netflix a partir de la versión de Microsoft para .NET. </p>
+<h2 id="El-ejemplo"><a href="#El-ejemplo" class="headerlink" title="El ejemplo"></a>El ejemplo</h2><p>Al contrario que en otros de mis post en este no voy a explicar cada una de las clases, me voy a quedar más en la idea. Dentro de la kata, principalmente vamos a encontrar dos tipos de clases, los eventos y los objetos que se suscriben.</p>
+<p>La kata elegida es <a href="http://www.slideshare.net/DanielOjedaLoisel/rpg-combat-kata" target="_blank" rel="external">RPGCombatKata</a>, es una kata iterativa  e incremental basada en un juego RPG. Hacer Katas de juegos es una forma interesante de practicar la capacidad de nuestro código para absorber nuevas funcionalidades. Las reglas y los elementos de un juego suelen estar tan acoplados que el efecto de onda que se produce con cada cambio es muy alto.</p>
+<p>Para comunicar los dos tipos de clases que tenemos, está el <a href="https://github.com/jdvr/RxJava-RPGCombatKata/blob/master/src/main/java/es/juandavidvega/rpgcombat/engine/events/EventBus.java" target="_blank" rel="external">bus</a>. Es el punto común de ambos objetos, así si un objeto quiere recibir eventos de ataque, se suscribe al bus.</p>
+<p>En el caso de los eventos que se publican en el bus, y que son recibidos por todos los suscriptores es donde entra en juego todo el set de funciones que nos ofrece RxJava. </p>
+<p>Uno de los elementos de juego es que un personaje, puede lazar un ataque sobre otro.  Cuando se crea un personaje, este suscribe a los eventos de ataque que se publiquen en el bus, y para eso aplica funciones de mapeo y filtrado sobre el stream que nos ofrece el bus.</p>
+<p> En la clase del personaje se hace esto:</p>
+<figure class="highlight java"><figcaption><span>suscripción a los ataques</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Character</span> </span>&#123;</div><div class="line"></div><div class="line"> ...</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">damageEvent</span><span class="params">()</span> </span>&#123;</div><div class="line">    subscriptions.add(Damage,</div><div class="line">    	<span class="keyword">this</span>.&lt;DamageEvent&gt;getObservable(Damage)</div><div class="line">        	.subscribe(<span class="keyword">this</span>::manageDamage));</div><div class="line">&#125;</div><div class="line"></div><div class="line"> ...</div><div class="line"></div><div class="line"><span class="keyword">private</span> &lt;T extends Event&gt; <span class="function">Observable&lt;T&gt; <span class="title">getObservable</span><span class="params">(EventType type)</span> </span>&#123;</div><div class="line">	<span class="keyword">return</span> getEventBus().&lt;T&gt;streamOf(type).filter(<span class="keyword">this</span>::isMe);</div><div class="line">&#125;</div><div class="line"></div><div class="line"> ...</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight java"><figcaption><span>En el bus</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> &lt;T&gt; <span class="function">Observable&lt;T&gt;  <span class="title">streamOf</span><span class="params">(EventType type)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> toObservable()</div><div class="line">           .filter(event -&gt; event.is(type))</div><div class="line">           .map(filteredEvent -&gt; (T) filteredEvent);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>Cuando se hace una llamada al bus, se indica el tipo de evento sobre el que se quiere el stream, en esa primera llamada se filtran todos los eventos genéricos a los que sean del tipo que se solicita en <em>streamOf</em>  y se mapea el stream para que sea un stream del tipo de evento solicitado. Teniendo un stream del tipo <em>Damage</em> se aplica un filtro para eliminar todos aquellos que no sean dirigidos a ese personaje, y por ultimo se aplica la suscripción. </p>
+<p>En el objeto <em>subscriptions</em> tenemos todas las suscripciones de un personaje, y cuando este muere, se eliminan todas y así se elimina la posibilidad de recibir, ataques, curas, unión a facciones, etc.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusión"></a>Conclusión</h2><p>El primer punto importante es lo complicado que resulta cambiar la mente para pensar en todo como un stream al que se puede suscribir una clase, a pesar de eso me ha encantado este experimento sería un placer intentar realizar algún proyecto con esta tecnología.</p>
+<p>El único problema que he tenido es durante el desarrollo de los test, primero empecé usando un bus asíncrono.  Esto me resultaba imposible, había algún test que pasaba a veces si y a veces no, un sin sentido. Luego decidí por cambiar a un bus síncrono y un singleton. El problema de eso fue que se me mezclaban los eventos de diferentes test y según el orden algunos test fallaban. Por suerte, esto último fue sencillo de solucionar, creaba un instancia en el before que luego destruía en el after.</p>
+<h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2><ul>
+<li><a href="https://github.com/jdvr/RxJava-RPGCombatKata" target="_blank" rel="external">Código completo</a></li>
+<li><a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754" target="_blank" rel="external">The introduction to Reactive Programming you have been missing</a></li>
+<li><a href="https://github.com/ReactiveX/RxJava/wiki/Additional-Reading" target="_blank" rel="external">RxJava – Additional Reading</a></li>
+</ul>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/06/05/Adios-wordpress-hola-Hexo/" > Adiós wordpress, hola hexo :)</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/04/10/incluyendo-base-de-datos-embebida/" >Incluyendo base de datos embebida</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

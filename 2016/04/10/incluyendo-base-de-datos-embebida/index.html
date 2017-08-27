@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2016/04/10/incluyendo-base-de-datos-embebida/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Incluyendo base de datos embebida"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image"  itemprop="image primaryImageOfPage" content="http://juandavidvega.es/images/banner-large.jpg" />
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Incluyendo base de datos embebida - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/banner-large.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Incluyendo base de datos embebida</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        10-04-2016
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/Java/">Java</a>/ <a href="/categories/Java/Server-Side/">Server Side</a>/ <a href="/categories/Java/Server-Side/spring/">spring</a>/ <a href="/categories/Java/Server-Side/spring/Tutorials/">Tutorials</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>En lo que podemos considerar la segunda parte o la segunda iteración sobre <a href="/2015/12/06/springboot-y-stomp-aplicaciones-web-interactivas-con-websocket/" title="Aplicaciones web interactivas usando WebSocket">Chapp</a>, vamos a hablar de como incluir una base de datos embebida en memoria para nuestra aplicación.<br><a id="more"></a><br>En mi caso he elegido este sistema para esta aplicación por que hacia tiempo que tenia ganas de probarlo y como comenté en el anterior post la idea de esta app es ir construyendo un proyecto real con diferentes tecnologías, así que no había mejor escenario y oportunidad que esta para probar la base de datos embebida.</p>
+<p>Aunque existen diferentes configuraciones que la base de datos sea embebida y en memoria significa que la base de datos arranca junto con su contenedor (la aplicación) y desaparece cuando este lo hace.</p>
+<h3 id="Soporte-de-Spring-Boot-para-base-de-datos-embebidas"><a href="#Soporte-de-Spring-Boot-para-base-de-datos-embebidas" class="headerlink" title="Soporte de Spring Boot para base de datos embebidas."></a>Soporte de Spring Boot para base de datos embebidas.</h3><p>Ahora mismo Spring Boot puede “autoconfigurar” tres tipos de bases de datos embebidas <a href="http://www.h2database.com/html/main.html" target="_blank" rel="external">H2</a>, <a href="http://hsqldb.org/" target="_blank" rel="external">HSQL</a> y <a href="http://db.apache.org/derby/" target="_blank" rel="external">Derby</a>. En mi caso he elegido HSQL por que fue donde encontré la documentación más cómoda y por que estoy acostumbrado a Hibernate (argumento de peso :-P).</p>
+<h3 id="Configuracion-del-proyecto"><a href="#Configuracion-del-proyecto" class="headerlink" title="Configuración del proyecto"></a>Configuración del proyecto</h3><p>Teniendo ya un proyecto Spring boot como era nuestro caso, nuestro pom se veía de la siguiente manera:</p>
+<pre class="lang:xhtml decode:true " title="pom antes de la bbdd">....
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-websocket&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-messaging&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+....</pre>
+&nbsp;
+
+Lo único que tenemos que hacer es añadir dos dependencias, primero Spring Boot Data, que nos añade de manera transitiva Spring JDBC. Y luego HSQLDB que es la dependencia para el motor de base de datos que hemos elegido.
+
+<pre class="lang:xhtml decode:true " title="pom con las nuevas dependencias">....
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-websocket&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-messaging&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.hsqldb&lt;/groupId&gt;
+            &lt;artifactId&gt;hsqldb&lt;/artifactId&gt;
+            &lt;scope&gt;runtime&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+...</pre>
+&nbsp;
+
+### Esquema y Datos
+
+Antes de empezar el desarrollo en java para utilizar nuestra base de datos, vamos a crear un fichero llamado schema.sql que incluirá la creación de tablas y lo necesario para conformar nuestro esquema.
+
+Por defecto Spring va a buscar ese fichero en la raíz de classpath por Internet hay varios ejemplos de como cambiar esa ruta por defecto y también las posibles rutas, yo me he quedado con la opción de crearlo en “/resources/schema.sql”
+
+<pre class="lang:mysql decode:true" title="/resources/schema.sql">create table message (
+  id identity,
+  content varchar (50) not null,
+  sender varchar (50) not null,
+  sendDate date not null
+);</pre>
+
+<p> El fichero no tiene complejidad ninguna, simplemente creamos una tabla llamada “message” que va a almacenar los mensajes que los usuario envíen, bastante simple pero por ahora tampoco necesitamos más.</p>
+<p>Tenemos la opción de junto al fichero schema.sql, crear un fichero data.sql en el que incluir los datos que deben cargarse al arrancar la BBDD. Yo no he hecho uso de él.</p>
+<h3 id="Acceso-desde-el-codigo"><a href="#Acceso-desde-el-codigo" class="headerlink" title="Acceso desde el código"></a>Acceso desde el código</h3><p>El acceso a la base de datos es como el uso de cualquier otra base de datos con un ORM, primero vamos a definir la interfaz de nuestro repositorio</p>
+<pre class="lang:java decode:true " title="ChatMessageRepository.java">package es.juandavidvega.repository;
+
+import es.juandavidvega.output.ChatMessage;
+import es.juandavidvega.output.ChatMessages;
+
+public interface ChatMessageRepository {
+    void save(ChatMessage message);
+    ChatMessages loadChannelMessages();
+
+}
+</pre>
+
+<p>Lo siguiente es crear la implementación concreta para el jdbc template de spring jpa, seguramente nos podríamos ahorrar la interfaz, pero yo en estos casos siempre suelo hacerlo así por que la implementación concreta puede cambiar bastante sobre todo mientras estoy probando opciones, conectores, ejemplos, etc.</p>
+<pre class="lang:java decode:true" title="JDBCChatMessageRepository.java">@Repository("chatMessageRepository")
+public class JDBCChatMessageRepository implements ChatMessageRepository {
+
+    static final String CreateQuery = "insert into message (content, sender, sendDate) values (?, ?, ?)";
+    static final String FindAllQuery = "select content, sender, sendDate from message";
+    private final JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public JDBCChatMessageRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    @Override
+    @Transactional
+    public void save(ChatMessage message) {
+        try{
+         jdbcTemplate.update(
+            CreateQuery,
+            message.getContent(),
+            message.getSender(),
+            message.getSendDate());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public ChatMessages loadChannelMessages() {
+        try{
+            return jdbcTemplate.queryForObject(
+                    FindAllQuery,
+                    this::createMessagesFromResult
+            );
+        }catch (EmptyResultDataAccessException emptyData){
+            return new ChatMessages();
+        }
+    }
+
+    private ChatMessages createMessagesFromResult(ResultSet resultSet, int rowNumber) {
+        ChatMessages messages = new ChatMessages();
+        try {
+            while (resultSet.next()){
+                messages.add(new ChatMessage(
+                        resultSet.getString("content"),
+                        resultSet.getString("sender"),
+                        resultSet.getDate("sendDate")
+                ));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  messages;
+    }
+}
+</pre>
+&nbsp;
+
+Lo marcamos como “@Repository” y usamos “@Autowired” para incluir el jddcTemplate de spring. Implementamos los dos métodos de la interfaz de la formas más simple posible y ya tenemos nuestro acceso a base de datos completo.
+
+Para usarlo, sólo es necesario inyectarlo y llamar a los método que queramos, por ejemplo:
+
+<pre class="lang:java decode:true" title="ChatMessageProcessor">@Service
+public class ChatMessageProcessor {
+
+    private final ChatMessageRepository chatMessageRepository;
+
+    @Autowired
+    public ChatMessageProcessor(ChatMessageRepository chatMessageRepository) {
+        this.chatMessageRepository = chatMessageRepository;
+    }
+
+    public ChatMessage process(UserMessage rawMessage){
+        ChatMessage message = new ChatMessage(rawMessage.getContent(), rawMessage.getSender(), rawMessage.getSendDate());
+        chatMessageRepository.save(message);
+        return message;
+    }
+}</pre>
+
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusión"></a>Conclusión</h3><p>Sabiendo lo que se hace y el objetivo, crear una base de datos de este tipo lleva entre 5 – 10 minutos, es un tiempo ínfimo comparado con la versatilidad que puede aportar a nuestro tutoriales, ejemplos o _spike. _En esta aplicación concreta el almacenamiento de mensajes se va a usar para introducir la nueva funcionalidad de canales que veremos en la siguiente parte.</p>
+<h3 id="Mas-informacion"><a href="#Mas-informacion" class="headerlink" title="Más información"></a>Más información</h3><ul>
+<li><a href="http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html" target="_blank" rel="external">Documentación oficial S</a><a href="http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html" target="_blank" rel="external">pring</a></li>
+<li><a href="https://github.com/jdvr/chapp" target="_blank" rel="external">Código completo (repositorio que se actualiza, puede no coincidir 100%)</a></li>
+</ul>
+<p><strong>NOTA:</strong> Recuerdo que el objetivo de esta segunda parte es exclusivamente el añadir la bbdd embebida, en la siguiente parte daremos uso y sentido a esta de forma útil para el usuario.</p>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/05/11/Experimentando-con-programacion-reactiva/" > Experimentando con programación reactiva</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/12/06/springboot-y-stomp-aplicaciones-web-interactivas-con-websocket/" >Aplicaciones web interactivas usando WebSocket</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

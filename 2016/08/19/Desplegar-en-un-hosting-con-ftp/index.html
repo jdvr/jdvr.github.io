@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2016/08/19/Desplegar-en-un-hosting-con-ftp/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Desplegar en un hosting con ftp"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="http://juandavidvega.es/images/2016/08/cover-ftp.jpg"/>
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Desplegar en un hosting con ftp - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/2016/08/cover-ftp.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Desplegar en un hosting con ftp</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        19-08-2016
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/Programming/">Programming</a>/ <a href="/categories/Programming/Tutorials/">Tutorials</a>/ <a href="/categories/Programming/Tutorials/ftp/">ftp</a>/ <a href="/categories/Programming/Tutorials/ftp/deploy/">deploy</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>En los hosting compartidos normalmente no se puede acceder por SSH, ni se tiene posibilidad de ejecutar un script, ni descargar de un repositorio para luego ejecutar un comando de despliegue, es decir, en general esta bastante limitado.</p>
+<p>El acceso que siempre suele estar habilitado es por FTP, así que voy a explicar un pequeño script que uso para desplegar el proyecto en el que trabajo ahora mismo.<br><a id="more"></a></p>
+<h2 id="LFTP-FTP-de-manera-comoda"><a href="#LFTP-FTP-de-manera-comoda" class="headerlink" title="LFTP: FTP de manera cómoda"></a>LFTP: FTP de manera cómoda</h2><p>Mi script de despliegue tiene tres partes: en la primera historifico la antigua carpeta “deploy/next” y luego copio los ficheros del próximo deploy a “deploy/next”, la segunda es generar un release con git y por último la subida al FTP:</p>
+<figure class="highlight sh"><figcaption><span>Script de despliegue</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#back up and copy</span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"><span class="comment">#release</span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"><span class="comment">#upload to server</span></div><div class="line">FTP_USER=<span class="variable">$1</span>;</div><div class="line">FTP_PASSWORD=<span class="variable">$2</span>;</div><div class="line">SITE=<span class="string">"ftp.server.com;"</span>;</div><div class="line">DISABLE_SSL=<span class="string">"set ssl:verify-certificate no;"</span>;</div><div class="line">SOURCEDIR=<span class="string">"./next/"</span>;</div><div class="line">TARGETDIR=<span class="string">"/public_html/target"</span>;</div><div class="line">lftp -c <span class="string">"open -u <span class="variable">$FTP_USER</span>,<span class="variable">$FTP_PASSWORD</span> <span class="variable">$SITE</span> <span class="variable">$DISABLE_SSL</span>  mirror -R <span class="variable">$SOURCEDIR</span> <span class="variable">$TARGETDIR</span>"</span></div></pre></td></tr></table></figure>
+<p><a href="https://lftp.yar.ru/" target="_blank" rel="external">LFTP</a> es un programa que facilita mucho el uso de ftp, la opción -c nos permite pasar una lista de comandos a ejecutar, los comandos son:<br>“open” con la opción -u y el usuario y la contraseña, luego desactivo el ssl y por último el comando mirror con la opción -R que lo que hace es duplicar el contenido de un directorio local en uno remoto.</p>
+<p>Para que duplique el contenido del directorio local en el remoto, hay que usar el directorio remoto sin “/“ al final, si en mi script cambio el <em>TARGETDIR</em> a “/public_html/target/“ en el servidor se crearía una carpeta next con su contenido.</p>
+<p>Si el <em>TARGETDIR</em> es “/public_html/target/“ y el contenido de la carpeta “./next/“ fuera “example.file” el resultado sería:</p>
+<figure class="highlight sh"><figcaption><span>Resultado</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/public_html/target/</div><div class="line">  |_next</div><div class="line">    |_example.file</div></pre></td></tr></table></figure>
+<p>Por el contrario, si el <em>TARGETDIR</em> es “/public_html/target” y el contenido de la carpeta “./next/“ fuera “example.file” el resultado sería:</p>
+<figure class="highlight sh"><figcaption><span>Resultado</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/public_html/target/  </div><div class="line">  |_example.file</div></pre></td></tr></table></figure>
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/09/17/developer-week-idealista-equipo/" > Idealista Developer Week, Cultura de equipo</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/06/05/Adios-wordpress-hola-Hexo/" >Adiós wordpress, hola hexo :)</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

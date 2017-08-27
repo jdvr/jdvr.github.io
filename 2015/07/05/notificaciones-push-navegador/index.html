@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2015/07/05/notificaciones-push-navegador/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Notificaciones Push en el navegador"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image"  itemprop="image primaryImageOfPage" content="http://juandavidvega.es/images/banner-large.jpg" />
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Notificaciones Push en el navegador - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/banner-large.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Notificaciones Push en el navegador</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        05-07-2015
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/api/">#api</a> <a href="/tags/java/">#java</a> <a href="/tags/connect2/">#connect2</a> <a href="/tags/spark/">#spark</a>
+
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Durante los últimos 4 meses he desarrollado mi trabajo de fin de grado, el cual me ha valido para por fin obtener mi título, pero más importante aún, he aprendido mucho sobre el uso de diferentes tecnologías en diferentes contextos. Hoy voy a escribir sobre el sistema que uso para enviar notificaciones push al navegador.</p>
+<a id="more"></a>
+<p>Lo que hago es dejar la conexión HTTP abierta con el cliente desde el servidor y voy enviando respuestas parciales hasta que al final envío una que significa final.</p>
+<p>Bien es cierto que una buena alternativa sería el uso de sockets, pero también es verdad que me fue muy fácil comenzar a trabajar dejando la conexión HTTP viva y por eso elegí esta opción.</p>
+<p>Cuando hablo de notificaciones Push lo hago en el contexto de un diagrama de flujo de este estilo:</p>
+<p><a href="/images/2015/07/Push-en-el-navegador.jpg"><img src="/images/2015/07/Push-en-el-navegador-259x300.jpg" alt="Push en el navegador"></a></p>
+<p>El usuario en el navegador genera un evento que hace que desde ese momento el servidor necesite enviar mensajes al navegador usando Push y este se los muestre al usuario, es decir,  después del paso 1 y 2 se repetirían de manera sucesiva los pasos  3 y 4 en los que el servidor enviar cierta información al navegador y el JS del cliente sabe como tratarlo para enseñarlo al usuario.</p>
+<p>Lo primero es comentar que la aplicación de servidor esta hecha usando <a href="http://sparkjava.com" target="_blank" rel="external">Spark</a>, y que uso Tomcat 8 sobre la JVM 8 y usando Servlet 3 para poder trabajar con AsyncContext.</p>
+<p>La primera petición que se genera desde el cliente al que luego vamos a enviar notificación push la gestiona este trozo de código:</p>
+<p><pre class="lang:java mark:7-10,12 decode:true " title="Crear un cliente">get(“/api/auth/device/configuration/:phone”, (request, response) -&gt; {<br> User currentUser = deviceConfigurationService.findBy(request.session().attribute(CurrentUser));<br> Device device = deviceCommunicationService.findBy(request.params(“phone”), currentUser);<br> if (device == null) {<br>   return ResponseManager.negativeServerResponse(“Fail”, “Device not found”, 404);<br> }<br> request.raw().setAttribute(“org.apache.catalina.ASYNC_SUPPORTED”, true);<br> System.out.println(request.raw().startAsync());<br> request.raw().getAsyncContext().setTimeout(300000);<br> Client client = new Client(request.raw().getAsyncContext());<br> deviceCommunicationService.sendRequestToReadAppsTo(device, new DeviceResponseHandler(new Id(device.getNumber(),     currentUser.email()), client));<br> client.push(new PartialResonse(50).toString());<br> return null;<br>},<br>jsonEncoder);</pre><br>Como bien comento arriba este pequeño trozo de código ha sido extraído de la API del proyecto Connect2, es por eso que vemos algo de lógica relacionado con comprobar que el Device este activo, las líneas marcadas (7-10, 12) son realmente los elementos importantes, lo primero es asegurar que el contexto asíncrono esta soportado por nuestro contenedor de aplicaciones (Tocamt8), luego aumento el tiempo de vida de la petición a 5 minutos en lugar de los 30 segundos por defecto y por último creo un cliente, el cliente representa al navegador y nosotros desde el código podemos “inyectarle” mensajes (línea 12). El Client sería así:</p>
+<p><pre class="lang:java decode:true mark:36-58" title="Client.java">public class Client {<br>    private AsyncContext context;<br>    private boolean isCompatibilityMode;<br>    private final static String StartMessageFlag = “#start#”;<br>    private final static String FinishMessageFlag = “#finish#”;</pre></p>
+<pre><code>public Client(AsyncContext context) {
+    this.context = context;
+}
+
+public synchronized void refreshContext(AsyncContext context, boolean compatibilityMode) {
+    if (this.context != null) {
+        try {
+            this.context.complete();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    this.context = context;
+    this.isCompatibilityMode = compatibilityMode;
+}
+
+public synchronized void push(String message) {
+    ServletResponse response = null;
+    PrintWriter writer = null;
+
+    try {
+        if (this.context != null &amp;amp;&amp;amp;
+                (response = this.context.getResponse()) != null &amp;amp;&amp;amp;
+                (writer = response.getWriter()) != null) {
+                writer.println(StartMessageFlag);
+                writer.println(message);
+                writer.println(FinishMessageFlag);
+      /* Avoid navigator buffer */
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+                writer.print(&quot;                    &quot;);
+            writer.flush();
+            response.flushBuffer();
+            return;
+        }
+    } catch (Exception e) {
+        try {
+            this.context.complete();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+
+public void destroy() {
+    if (this.context == null) {
+        return;
+    }
+
+    try {
+        this.context.complete();
+    } catch (Exception ex) {
+    }
+}
+</code></pre><p>}<br>Quizás la parte mala de este método es lo sucio que nos ha quedado el push al tener que añadir gran cantidad de líneas en blanco para evitar la cache de respuesta del navegador.</p>
+<p>Hasta ahora he enseñado como almaceno la petición en una instancia de Client con la que luego podemos comunicarnos con el navegador, lo siguiente es saber como se genera la primera petición desde el navegador y como se controlan las sucesivas respuestas.</p>
+<p><pre class="lang:js decode:true " title="Enviar la petición desde el navegador">var AjaxRequest = (function (url, data, callback) {<br>    return {<br>        …<br>        pushClient: function () {<br>            var xhr = new XMLHttpRequest();<br>            var lastPos = 0;<br>            xhr.onreadystatechange = function () {<br>                if (xhr.status === 200) {<br>                    callback(xhr.responseText);<br>                }<br>            };<br>            xhr.open(“GET”, url, true);<br>            xhr.send();<br>        }<br>    }<br>});</pre><br>Esto nos llamaría al primer método que presentamos, y como podemos ver, cuando llega una respuesta lo que hace es ejecutar su callback para que este haga lo que considere necesario, en nuestro caso, el callback aprovecha las marcas que pone el Client en cada respuesta para extraer los sucesivos mensajes y generar los elementos que verá el usuario.</p>
+<p><pre class="lang:js decode:true " title="Tratar el mensaje del Client.java">var ResponseParse = (function () {<br>    var StartMessageFlag = ‘#start#’;<br>    var FinishMessageFlag = ‘#finish#’;<br>    var start = -1;<br>    var finish = -1;<br>    var StatusPostion = 1;<br>    var MessagePosition = 3;<br>    function createJSONFrom(string){<br>        var data = string.split(“;”);<br>        var result =  {<br>            status: data[StatusPostion],<br>            message: data[MessagePosition]<br>        };<br>        return result<br>    }<br>    return {<br>        parse: function (rawResponse) {</pre></p>
+<pre><code>        start = rawResponse.indexOf(StartMessageFlag, finish != -1 ? finish : 0);
+        finish = rawResponse.indexOf(FinishMessageFlag, start);
+        var messageStartIndex = start + StartMessageFlag.length;
+        return createJSONFrom(rawResponse.substr(messageStartIndex, finish - messageStartIndex))
+    },
+
+    reset: function(){
+        start = -1;
+        finish = -1;
+    }
+}
+</code></pre><p>}());<br>Hasta aquí la explicación de mi implementación de notificaciones push en el navegador, como bien comento a lo largo de todo el post seguramente hay una forma más eficiente de realizar esta tarea, pero para tareas que no sean recurrentes y entornos donde la eficiencia no es un requisito, el tiempo de implementación que supone esta tecnología sin duda compensa cualquier aspecto malo. Desde mi punto de vista no se sacrifica nada de calidad pero si se gana tiempo para conseguir el mismo objetivo.</p>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/08/09/mama-quiero-ser-programador/" > Mama, quiero ser programador.</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/04/14/calistenia-de-objetos-object-calisthenics/" >Calistenia de objetos (Object Calisthenics)</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

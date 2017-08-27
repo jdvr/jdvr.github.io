@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2015/09/06/extrayendo-informacion-de-una-web-de-manera-automatica-17track-net/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Extrayendo información de una web de manera automática. 17Track.net"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image"  itemprop="image primaryImageOfPage" content="http://juandavidvega.es/images/banner-large.jpg" />
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Extrayendo información de una web de manera automática. 17Track.net - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/banner-large.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Extrayendo información de una web de manera automática. 17Track.net</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        06-09-2015
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/api/">#api</a> <a href="/tags/java/">#java</a> <a href="/tags/mail/">#mail</a>
+
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Hace algunos días compre un producto por internet. Por costumbre tengo hacer el tracking de los paquetes usando <a href="http://17track.net/" target="_blank" rel="external">17track</a> esta web china tiene un sistema de seguimiento muy bueno, siendo capaz de aportar información de casi cualquier origen a cualquier destino, sin importar cual sea la compañía que lo envía, y esto es gracias a sus numerosos acuerdos con compañías de transporte, misma razón por la cual no tiene una API pública.<br><a id="more"></a><br>Durante la espera para que llegue mi paquete suelo comprobar una vez al día el estado del tracking, una tarea bastante aburrida y que preferiría que fuera automática.</p>
+<h3 id="Hazlo-tu-que-a-mi-me-da-pereza"><a href="#Hazlo-tu-que-a-mi-me-da-pereza" class="headerlink" title="Hazlo tú, que a mi me da pereza"></a>Hazlo tú, que a mi me da pereza</h3><p>Como no podía ser de otra manera me puse a buscar la forma de automatizar esta tarea y bien, aquí surgen las dudas más importantes:</p>
+<p>1. ¿Como lanzo una búsqueda? (¿Cuál es la URL de la “API”?)</p>
+<p>2. ¿Como simulo la búsqueda para obtener la información de mi paquete? (Hago la llamada a la “API”)</p>
+<ol>
+<li>Una vez se realiza la búsqueda, ¿Cómo extraigo solo los datos que me interesan? (Como parseo la respuesta)</li>
+</ol>
+<p>La primero cuestión fue simple pues solo hay que fijarse un poco para notar que cuando le damos a “buscar” <strong>con un solo número</strong> de paquete la web nos lleva a una URL de este estilo</p>
+<p><span style="color: #666699;"><strong><em><a href="http://www.17track.net/en/result/post-details.shtml?nums=US123456RL" target="_blank" rel="external">http://www.17track.net/en/result/post-details.shtml?nums=US123456RL</a></em></strong></span></p>
+<p>Donde lo que se encuentra después del igual es nuestro número de paquete (<span style="color: #666699;"><strong><em>US123456RL</em></strong></span>), antes de lo esperado ya tenía la “URL de la API”, así que a resolver el resto de cuestiones.</p>
+<p>Inicié una pequeña investigación por google para resolver mi primera cuestión, y en poco tiempo encontré dos opciones:</p>
+<p>1. <a href="http://jsoup.org/" target="_blank" rel="external">http://jsoup.org/</a> –&gt; Un parser HTML que puede descargar el documento desde una URL, una librería con una interfaz de uso estupenda, que recomiendo.</p>
+<p>Pero en mi caso no es valida por que la única forma que tengo de obtener los datos es que la web pueda ejecutar el JS una vez se ha hecho la carga del documento, así que pase a la siguiente opción:</p>
+<p>2. <a href="http://sourceforge.net/projects/htmlunit/" target="_blank" rel="external">http://sourceforge.net/projects/htmlunit/</a> –&gt; Un navegador en java que no tiene interfaz, en mi contexto, una maravilla que cumple justo lo que necesito, además una vez realiza la petición y simulada la carga de documento y la ejecución de JS. Nos ofrece una interfaz que permite acceder a la estructura del html generado.</p>
+<p>A estas alturas ya se a que URL tengo que realizar la petición, se como procesarla para obtener la información y con la misma librería puedo realizar el filtrado para quedarme solo con el texto que me interesa. Mis tres cuestiones están resueltas.</p>
+<p>El trozo de código necesario para realizar esto sería:</p>
+<p><pre class="lang:java decode:true" title="Descargar y filtrar información de una web.">public static final String BASE_URL = “<a href="http://www.17track.net/en/result/post-details.shtml?nums=" target="_blank" rel="external">http://www.17track.net/en/result/post-details.shtml?nums=</a>“;</pre></p>
+<p>public String track(String trackNumber) throws IOException {<br>   final WebClient webClient = new WebClient(BrowserVersion.FIREFOX_38);<br>   final HtmlPage page = webClient.getPage(BASE_URL + trackNumber);<br>   final HtmlSection section = page.getHtmlElementById(“events”);<br>   return section.asText();<br>}<br>Nota: el <em>Magic String</em> “events” es debido a que la sección de la web que tiene el texto que me interesa tiene como id “events”.</p>
+<p>Como ven la librería ofrece una interfaz intuitiva, podríamos eliminar variables y escribir en un sola linea o extraer algún método que nos de los web client, o nos construya la URL, pero refactor a parte, escrito de esta manera se demuestra la simplicidad y potencia que quiero recalcar.</p>
+<p>Volvamos a la resolución de mi problema, ahora poseo la información que necesito y tengo un “.jar” en mi servidor que se ejecuta diariamente y extrae dicha información, hasta aquí genial pero si luego tengo que conectarme por ssh a la máquina para ver los resultados, es aún peor que consultar la web.</p>
+<h3 id="Enviame-un-mail"><a href="#Enviame-un-mail" class="headerlink" title="Enviame un mail"></a>Enviame un mail</h3><p>Así que, decidí que la información obtenida por el método anterior se envíe por correo, tarea también sencilla si nos proveemos de la librería adecuada, en mi caso no indague demasiado y me quede con la primera opción que encontré:</p>
+<p><a href="http://mvnrepository.com/artifact/javax.mail" target="_blank" rel="external">http://mvnrepository.com/artifact/javax.mail</a></p>
+<p>De igual manera que la librería anterior considero que aporta una interfaz muy sencilla, que realiza de manera efectiva su función.</p>
+<p><pre class="lang:java decode:true" title="Enviar un mail">public class MailSender {</pre></p>
+<pre><code>private final String to;
+private final String messageBody;
+
+public MailSender(String to, String messageBody){
+    this.to = to;
+    this.messageBody = messageBody;
+}
+
+public void send(){
+
+    Session session = Session.getDefaultInstance(getMailProperties());
+    try{
+        MimeMessage message = new MimeMessage(session);
+        message.setFrom(new InternetAddress(From.value()));
+        message.addRecipient(Message.RecipientType.TO,
+                             new InternetAddress(to));
+        message.setSubject(Subject.value());
+        message.setText(messageBody);
+        Transport.send(message);
+    }catch (MessagingException mex) {
+        mex.printStackTrace();
+    }
+
+}
+
+private Properties getMailProperties() {
+    Properties properties = System.getProperties();
+    properties.setProperty(&quot;mail.smtp.host&quot;, Host.value());
+    return properties;
+}
+</code></pre><p>}<br><br>&nbsp;</p>
+<p>De nuevo, tenemos una clase, que refactor a parte, se entiende muy bien y en menos de 5 min te permite pasar de estar buscando una solución en google a haber enviado un email.</p>
+<p>Esto es un ejemplo del contenido del email resultante:</p>
+<blockquote>
+<p>Destination Country</p>
+<p>2015-08-26 00:00</p>
+<p>Delivered</p>
+<p>2015-08-26 00:00</p>
+<p>In the delivery process</p>
+<p>2015-08-20 00:00</p>
+<p>Dispatch from the point of origin international office</p>
+<p>Origin Country - Cache Time:2015-09-06 03:35 - Go to official website2015-08-26 14:19</p>
+<p>The item has been delivered successfully</p>
+<p>2015-08-21 08:54</p>
+<p>The item has arrived in the country of destination</p>
+<p>2015-08-20 09:30</p>
+<p>The item is on transport to the country of destination</p>
+<p>2015-08-20 08:59</p>
+<p>The item is at the PostNL sorting center</p>
+<p>2015-08-19 12:14</p>
+<p>The item is at the handover point from freight carrier to PostNL</p>
+<p>2015-08-18 08:03</p>
+<p>The item has arrived in the transit airport</p>
+<p>2015-08-18 06:35</p>
+<p>The item has left the originating country</p>
+<p>2015-08-17 13:37</p>
+<p>The item is received by the shipper in the originating country</p>
+<p>2015-08-17 11:51</p>
+<p>The item is ready for shipment</p>
+<p>2015-08-17 06:00</p>
+<p>The item is pre-advised</p>
+<p>2015-08-17 04:48 <em>&lt;– Fecha del evento</em></p>
+<p>The Item is at the shippers warehouse  <em>&lt;– Evento</em></p>
+</blockquote>
+<h3 id="Pan-para-hoy-hambre-para-manana"><a href="#Pan-para-hoy-hambre-para-manana" class="headerlink" title="Pan para hoy, hambre para mañana"></a>Pan para hoy, hambre para mañana</h3><p>Una vez había construido una pequeña aplicación que hacia el tracking del paquete que estaba esperando y me enviaba a mi un email, pensé: <em>“Cuando quiera hacer tracking de otro paquete, quiera dejar de hacer tracking de este o quiera que un paquete concreto se envié a otro email, voy a tener que modificar, recompilar y subir el .”jar””</em>, es decir, tenía ahora un trabajo más tedioso que el que pretendía solucionar.</p>
+<p>Así que añadí el concepto de “NotifyTask”, un objeto que contiene el número de seguimiento y el email al que enviar la información, y construí una clase que dado un “NotifyTaskSet” me devolviera el “PackagesInfo” con cada uno de los paquetes a los que se realizó seguimiento, para luego yo, enviar esa información por email.<br>Lo siguiente fue añadir un loader, que extrajera los “NotifyTask” de un fichero json y en este momento me encuentro desarrollando una API que me permita añadir y quitar “NotifyTask” de manera cómodo para mi y para la gente que va a usar esta app.<br>Repositorio: <a href="https://github.com/jdvr/17TrackMailer" target="_blank" rel="external">17TrackMailer</a></p>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/09/27/apprenticeship-patterns/" > Aprendiendo a aprender: Apprenticeship Patterns</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/08/16/echando-cuentas/" >Echando cuentas</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

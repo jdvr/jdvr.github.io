@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2015/12/06/springboot-y-stomp-aplicaciones-web-interactivas-con-websocket/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Aplicaciones web interactivas usando WebSocket"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image"  itemprop="image primaryImageOfPage" content="http://juandavidvega.es/images/banner-large.jpg" />
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Aplicaciones web interactivas usando WebSocket - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/banner-large.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Aplicaciones web interactivas usando WebSocket</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        06-12-2015
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/Java/">Java</a>/ <a href="/categories/Java/Pet/">Pet</a>/ <a href="/categories/Java/Pet/Programming/">Programming</a>/ <a href="/categories/Java/Pet/Programming/Server-Side/">Server Side</a>/ <a href="/categories/Java/Pet/Programming/Server-Side/spring/">spring</a>/ <a href="/categories/Java/Pet/Programming/Server-Side/spring/Tutorials/">Tutorials</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Hace aproximadamente 6 meses durante el desarrollo del proyecto Connect2, me vi en la necesidad de realizar una transacción que debía enviar desde el navegador al servidor cierta información y luego finalizar la transacción y esperar que el servidor hiciera una petición a un web service y cuando obtenía la respuesta la mandaba al cliente. La solución rápida y sencilla a ese problema la pueden ver <a href="/2015/07/05/notificaciones-push-navegador/" title="Notificaciones Push en el navegador">aquí</a>. Sin embargo, me quede con la mala sensación de no haber explorado hasta el final el camino de los WebSockets y por eso he empezado esta serie de post.<br><a id="more"></a><br>&nbsp;</p>
+<h3 id="¿Que-planeo"><a href="#¿Que-planeo" class="headerlink" title="¿Qué planeo?"></a><strong>¿Qué planeo?</strong></h3><p>Escribir tres post en los que explico una aplicación hechas sobre WebSockets, luego añadiré algo más de complejidad a la arquitectura pero la aplicación y su funcionamiento se mantendrán igual. En este primer post me voy a centrar en hacer el Chat, una aplicación con la que explico y uso lo más básico de WebSockets. La idea es avanzar hasta tener un ejemplo que pueda representar una miniaplicación real que pueda ser puesta en producción y que use múltiples elementos, pero que esté sus transacciones de red estén basadas en WebSockets.</p>
+<p>&nbsp;</p>
+<h3 id="¿Que-estamos-construyendo-en-este-post"><a href="#¿Que-estamos-construyendo-en-este-post" class="headerlink" title="¿Qué estamos construyendo en este post?"></a><strong>¿Qué estamos construyendo en este post?</strong></h3><p>Este post es una guía de cómo construir una chat básico en el que los usuarios pueden unirse a un canal único y enviar mensajes a través de él. Usaré WebSocket, una fina capa que trabaja sobre TCP. Para encapsular los mensajes vamos a usar un “subprotocolo” llamado <a href="https://en.wikipedia.org/wiki/Streaming_Text_Oriented_Messaging_Protocol" target="_blank" rel="external">STOMP</a> que se usa para trasmitir mensajes de texto de manera que se puedan entender el cliente y el servidor. Añadiremos Spring para facilitar la gestión de WebSocket  (STOMP) en el servidor.</p>
+<h3 id="Nos-ponemos-manos-a-la-obra"><a href="#Nos-ponemos-manos-a-la-obra" class="headerlink" title="Nos ponemos manos a la obra"></a><strong>Nos ponemos manos a la obra</strong></h3><p>Intentaré no perderme en los detalles, voy a guiar de forma algo más genérica el proceso de desarrollo, al contrario que en otros post iré dando información y un porque sobre cada uno de los pasos sin centrarme demasiado en el código.</p>
+<p>###<br>1. Creamos el proyecto</p>
+<p>Lo primero es crear un proyecto Maven, vamos a utilizar Maven para gestionar nuestra dependencia con Spring Messaging y para incluir el plugin para hacer el build de Spring Boot.</p>
+<p>Deberíamos tener algo similar a esto:</p>
+<figure class="highlight xml"><figcaption><span>pom.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></div><div class="line">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>es.juandavidvega<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-websocket<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-websocket<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-messaging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></div><div class="line"></div></pre></td></tr></table></figure>
+<p>&nbsp;</p>
+<h3 id="2-Nuestro-modelo-de-mensajes"><a href="#2-Nuestro-modelo-de-mensajes" class="headerlink" title="2. Nuestro modelo de mensajes"></a>2. Nuestro modelo de mensajes</h3><p>He decidido dividir los mensajes en dos tipos, los de entrada (peticiones) y los de salida (respuesta), de esta manera tenemos un mensaje de entrada para cuando se da de alta un usuario. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">package</span> es.juandavidvega.input;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloMessage</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> String sender;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSender</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.sender;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>Solo incluye un Sender que es el nombre de usuario.</p>
+<p>Y como mencioné, tenemos también un mensaje de salida para dar respuesta a esa unión de un nuevo usuario.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">package</span> es.juandavidvega.output;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GreetingMessage</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String content;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">GreetingMessage</span><span class="params">(String content)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.content = content;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> content;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div></pre></td></tr></table></figure>
+<p>  El otro intercambio de mensajes que hay en nuestra aplicación es la de cuando un usuario envía un texto para publicarlo en la sala de chat, en ese caso esperamos un mensaje de entrada que tenga esta información: </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">package</span> es.juandavidvega.input;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.Date;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserMessage</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String content;</div><div class="line">    <span class="keyword">private</span> String sender;</div><div class="line">    <span class="keyword">private</span> Date sendDate;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> content;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSender</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sender;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getSendDate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sendDate;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Y como respuesta generamos un mensaje que está representado por una instancia de este objeto:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChatMessage</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> String content;</div><div class="line">    <span class="keyword">private</span> String sender;</div><div class="line">    <span class="keyword">private</span> Date sendDate;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChatMessage</span><span class="params">(UserMessage userMessage)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.content = userMessage.getContent();</div><div class="line">        <span class="keyword">this</span>.sender = userMessage.getSender();</div><div class="line">        <span class="keyword">this</span>.sendDate = userMessage.getSendDate();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> content;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSender</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sender;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getSendDate</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sendDate;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  Una vez tenemos todos nuestros mensajes representados como objetos java me gustaría añadir que el envío y recepción de estos objetos entre el cliente y el servidor se hace en formato JSON, para esto Spring se encarga de gestionar la serialización y deserialización de los mensajes JSON a objetos Java usado Jackson JSON, la explicación de cómo funciona Jackson escapa al contexto de este post, así que si no lo conoces, solo es impórtante que entiendas que hay algo que está transformando esos mensajes de cliente a nuestros objetos Java y viceversa.     </p>
+<h3 id="3-Manejador-de-esos-mensajes"><a href="#3-Manejador-de-esos-mensajes" class="headerlink" title="3. Manejador de esos mensajes"></a>3. Manejador de esos mensajes</h3><p>Para la gestión de mensajes que vamos a usar un controlador Spring, ahora mismo tenemos dos funcionalidades que cubrir, Un usuario que se une a la sala y Un usuario que manda un mensaje a la sala. Creamos una clase añadiendo el estereotipo @Controller de Spring,  y dentro de esta clase incluimos un método por funcionalidad. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="meta">@Controller</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChatRoomController</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@MessageMapping</span>(<span class="string">"/hello"</span>)</div><div class="line">    <span class="meta">@SendTo</span>(<span class="string">"/chat/joined"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> GreetingMessage <span class="title">join</span><span class="params">(HelloMessage message)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        simulatedDelay();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> GreetingMessage(<span class="string">"Hello "</span> + message.getSender() + <span class="string">", welcome to chat!"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@MessageMapping</span>(<span class="string">"/send/message"</span>)</div><div class="line">    <span class="meta">@SendTo</span>(<span class="string">"/chat/new/message"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> ChatMessage <span class="title">message</span><span class="params">(UserMessage message)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        simulatedDelay();</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ChatMessage(message);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">simulatedDelay</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</div><div class="line">        Thread.sleep(<span class="number">3000</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>A pesar de lo simple de esta clase, hay dos elementos que recalcar, uno es la anotación @MessageMapping, esto nos permite especificar que cuando se reciba un mensaje en la URL “/send/message”, el mensaje es gestionado por el método concreto de este controlador. Otra anotación importante y casi intuitiva es la de @SendTo que funciona justo al contrario de la anterior, es decir, cuando este método devuelve un mensaje, este mensaje debe ser publicado en la url “/chat/new/message”.</p>
+<p>Nuestra aplicación funciona con un sistema de publicaciones/suscripciones, podríamos decir que el servidor está subscrito a las publicaciones del cliente en lo que llamamos url de entradas (@MessageMapping) y el cliente está subscrito a la url de salidas (@SendTo) que son en las que el servidor publica sus respuesta, algo a destacar es que vamos a tener un solo servidor atendiendo la entrada pero 1 o más clientes atendiendo a la salida.</p>
+<h3 id="4-Configuracion-de-Spring-STOMP-Messaging"><a href="#4-Configuracion-de-Spring-STOMP-Messaging" class="headerlink" title="4. Configuración de Spring STOMP Messaging"></a>4. Configuración de Spring STOMP Messaging</h3><p>Para que Spring se encargue de la gestión de publicaciones/suscripciones que estoy intentando conseguir es necesario añadir una pequeña configuración.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Configuration</span></div><div class="line"><span class="meta">@EnableWebSocketMessageBroker</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebSocketConfig</span> <span class="keyword">extends</span> <span class="title">AbstractWebSocketMessageBrokerConfigurer</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configureMessageBroker</span><span class="params">(MessageBrokerRegistry config)</span> </span>&#123;</div><div class="line">        config.enableSimpleBroker(<span class="string">"/chat"</span>);</div><div class="line">        config.setApplicationDestinationPrefixes(<span class="string">"/app"</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">registerStompEndpoints</span><span class="params">(StompEndpointRegistry registry)</span> </span>&#123;</div><div class="line">        registry.addEndpoint(<span class="string">"/hello"</span>).withSockJS();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  De nuevo voy a detenerme en explicar el porqué de cada elemento de esta clase. Comenzamos con la anotación @Configuration que es un estereotipo que le indica a Spring que debe interpretar esta clase como una configuración de nuestra aplicación. La segunda anotación es auto descriptiva, @EnableWebSocketMessageBroker nos permite indicarle a Spring que se active el “intercambiador de mensajes” en la capa de los WebSockets. Ahora hacemos extender a nuestra clase de la clase de configuración por defecto que nos ofrece Spring y hacemos override del método “configureMessageBroker”. Este método hace dos cosas, identifica el punto de entrada a la URL “/app” que será el prefijo del contenido de las anotaciones @MessageMapping. También declara un “enableSimpleMesageBroker” que nos permite crear un Message Broker sencillo basado en memoria que será el encargado de gestionar los mensajes que van desde el servidor de vuelta a nuestro cliente y que tienen como prefijo “/chat”. Para acabar con la configuración sobrescribimos el método, “registerStompEndpoints”, que nos permite crear un punto para que el cliente haga una petición y comience la comunicación de mensajes sobre WebSockets.     </p>
+<h3 id="5-Crear-el-cliente"><a href="#5-Crear-el-cliente" class="headerlink" title="5. Crear el cliente"></a>5. Crear el cliente</h3><p>Nuestro cliente hará lo siguiente, primero creara una conexión sobre SocketJS con nuestro servidor, luego se suscribirá a las URL en las que sabe que el servidor publicará mensajes, las que están dentro de las anotaciones @SendTo, una vez se ha abierto la conexión y se han creado las suscripciones, nuestro cliente se queda a la espera de las acciones del usuario.  Nuestro usuario, una vez está conectado al servidor, puede realizar dos acciones, primero unirse a la sala, en ese momento nuestro código JS envía un mensaje STOMP sobre la conexión WebSocket abierta que Spring mapea hasta el método del controlador que mostramos más arriba. La otra acción de nuestro usuario es enviar un mensaje, en este caso y de la misma manera de la anterior se envía un mensaje sobre STOMP a la url de “envío de mensajes” que nuevamente Spring mapea nuestro método del controlador ChatRoomController.  Cuando cualquiera de las acciones son ejecutadas y el mensaje llega a nuestro controlador estamos viendo una comunicación uno a uno, el cliente envía un mensaje al servidor, ahora cuando el servidor gestiona el mensaje y publica la respuesta en la url a las que está suscrito el cliente la comunicación no es uno a uno, la respuesta genera una comunicación que es recibida y atendida por todos los cliente que estén conectados (subscritos) las URL que se encuentran en las anotaciones @SendTo. De este manera conseguimos distribuir el nuevo mensaje ente todos los clientes conectados. Código resultante de nuestro cliente:  Java Script </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> stompClient = <span class="literal">null</span>;</div><div class="line"><span class="keyword">var</span> OpenConnectionURL = <span class="string">'/hello'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> NewJoinURL = <span class="string">'/chat/joined'</span>;</div><div class="line"><span class="keyword">var</span> NewMessageURL = <span class="string">'/chat/new/message'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> SendNameURL = <span class="string">"/app/hello"</span>;</div><div class="line"><span class="keyword">var</span> SendMessageURL = <span class="string">"/app/send/message"</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> userName = <span class="string">"@default"</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setConnected</span>(<span class="params">connected</span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'connect'</span>).disabled = connected;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'disconnect'</span>).disabled = !connected;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'conversationDiv'</span>).style.visibility = connected ? <span class="string">'visible'</span> : <span class="string">'hidden'</span>;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'chatMessage'</span>).style.visibility = <span class="string">'hidden'</span>;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'chatBox'</span>).innerHTML = <span class="string">''</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">connect</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> socket = <span class="keyword">new</span> SockJS(OpenConnectionURL);</div><div class="line">    stompClient = Stomp.over(socket);</div><div class="line">    stompClient.connect(&#123;&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">frame</span>) </span>&#123;</div><div class="line">        setConnected(<span class="literal">true</span>);</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Connected: '</span> + frame);</div><div class="line"></div><div class="line">        stompClient.subscribe(NewJoinURL, <span class="function"><span class="keyword">function</span>(<span class="params">greeting</span>)</span>&#123;</div><div class="line">            showGreeting(<span class="built_in">JSON</span>.parse(greeting.body).content);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        stompClient.subscribe(NewMessageURL, <span class="function"><span class="keyword">function</span>(<span class="params">chatMessage</span>)</span>&#123;</div><div class="line">            showMessage(<span class="built_in">JSON</span>.parse(chatMessage.body));</div><div class="line">        &#125;);</div><div class="line"></div><div class="line"></div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">disconnect</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (stompClient != <span class="literal">null</span>) &#123;</div><div class="line">        stompClient.disconnect();</div><div class="line">    &#125;</div><div class="line">    setConnected(<span class="literal">false</span>);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Disconnected"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">joinChat</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    userName = <span class="string">"@"</span> + <span class="built_in">document</span>.getElementById(<span class="string">'name'</span>).value;</div><div class="line">    stompClient.send(SendNameURL, &#123;&#125;, <span class="built_in">JSON</span>.stringify(&#123; <span class="string">'sender'</span>: userName &#125;));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sendMessage</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> message = <span class="built_in">document</span>.getElementById(<span class="string">'message'</span>).value;</div><div class="line">    stompClient.send(SendMessageURL, &#123;&#125;, <span class="built_in">JSON</span>.stringify(&#123; <span class="string">'sender'</span>: userName, <span class="string">'content'</span>: message, <span class="string">'sendDate'</span>: <span class="keyword">new</span> <span class="built_in">Date</span>()  &#125;));</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'message'</span>).value = <span class="string">''</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showGreeting</span>(<span class="params">message</span>) </span>&#123;</div><div class="line">    addContentToChat(message);</div><div class="line">    showChatMessageBox();</div><div class="line">    hideLoginBox();</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMessage</span>(<span class="params">userMessage</span>) </span>&#123;</div><div class="line">    addContentToChat(userMessage.sender + <span class="string">" said "</span> + userMessage.content + <span class="string">" at "</span> + <span class="keyword">new</span> <span class="built_in">Date</span>(userMessage.sendDate));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addContentToChat</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> chatBox = <span class="built_in">document</span>.getElementById(<span class="string">'chatBox'</span>);</div><div class="line">    <span class="keyword">var</span> p = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</div><div class="line">    p.style.wordWrap = <span class="string">'break-word'</span>;</div><div class="line">    p.appendChild(<span class="built_in">document</span>.createTextNode(text));</div><div class="line">    chatBox.appendChild(p);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showChatMessageBox</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'chatMessage'</span>).style.visibility = <span class="string">'visible'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hideLoginBox</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'login'</span>).style.visibility = <span class="string">'hidden'</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>index</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"es"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello WebSocket<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"sockjs-0.3.4.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"stomp.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"chat.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span> <span class="attr">onload</span>=<span class="string">"disconnect()"</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"connect"</span> <span class="attr">onclick</span>=<span class="string">"connect();"</span>&gt;</span>Connect<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"disconnect"</span> <span class="attr">disabled</span>=<span class="string">"disabled"</span> <span class="attr">onclick</span>=<span class="string">"disconnect();"</span>&gt;</span>Disconnect<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"conversationDiv"</span>&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"login"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>What is your name?<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"name"</span> /&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"sendName"</span> <span class="attr">onclick</span>=<span class="string">"joinChat();"</span>&gt;</span>Send<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">hr</span>/&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"chatBox"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">hr</span>/&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"chatMessage"</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Write a message<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"message"</span> &gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></div><div class="line">                    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"sendMessage"</span> <span class="attr">onclick</span>=<span class="string">"sendMessage()"</span>&gt;</span>Send<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Dependencias: Stomp.js  y SockJS (<a href="https://github.com/jdvr/Chapp/tree/master/src/main/resources/static" target="_blank" rel="external">https://github.com/jdvr/Chapp/tree/master/src/main/resources/static</a>)   </p>
+<h3 id="6-Anadir-punto-de-arranque-empaquetar-desplegar-y-deleitarse-en-el-resultado"><a href="#6-Anadir-punto-de-arranque-empaquetar-desplegar-y-deleitarse-en-el-resultado" class="headerlink" title="6. Añadir punto de arranque, empaquetar, desplegar y deleitarse en el resultado"></a>6. Añadir punto de arranque, empaquetar, desplegar y deleitarse en el resultado</h3><p>Por último, vamos a poner en producción nuestra magnifica aplicación. Vamos a usar la clase de arranque por defecto de Spring Boot, nuestro punto de entrada a la aplicación quedaría así: </p>
+<figure class="highlight java"><figcaption><span>Clase de arranque</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@SpringBootApplication</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChApp</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        SpringApplication.run(ChApp.class, args);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>No me voy a extender en la explicación del funcionamiento de Spring Boot pero basta con decir que la anotación @SpringBootApplication permite que el resto de clase que hemos marcado, @Controller, @Configuration, etc sean cargadas he interpretadas en el arranque de nuestra aplicación.</p>
+<p>Para empaquetar usaremos el plugin de maven para Spring Boot o nuestro propio IDE, si somos más de consola bastara con ejecutar:</p>
+<p><pre class="lang:sh decode:true" title="crear .jar">mvn clean package</pre><br>y luego basta con ejecutar el jar resultante, bien desde nuestro IDE o desde consola:</p>
+<p><pre class="lang:default decode:true" title="Lanzar aplicación">java -jar target/nombre-del-proyecto.jar</pre><br>Si ahora te conectas a <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a> deberíamos tener una interfaz similar a esta:</p>
+<p><a href="/images/2015/12/head.jpg"><img src="/images/2015/12/head.jpg" alt="head"></a></p>
+<p>Si pulsamos Connect</p>
+<p>Veremos el siguiente log en la consola JS:</p>
+<p><a href="/images/2015/12/log.jpg"><img src="/images/2015/12/log.jpg" alt="log"></a></p>
+<p>Y nuestra interfaz cambiará a la siguiente:</p>
+<p><a href="/images/2015/12/conected.jpg"><img src="/images/2015/12/conected.jpg" alt="conected"></a></p>
+<p>Escribimos nuestro nombre de usuario y como resultado obtenemos:</p>
+<p><a href="/images/2015/12/joined.jpg"><img src="/images/2015/12/joined.jpg" alt="joined"></a></p>
+<p>Si conectamos otro cliente y hacemos un pequeño ejemplo de conversación el resultado es:</p>
+<p><a href="/images/2015/12/conversation.jpg"><img src="/images/2015/12/conversation.jpg" alt="conversation"></a></p>
+<h3 id="Conclusiones"><a href="#Conclusiones" class="headerlink" title="Conclusiones"></a>Conclusiones</h3><p>Tras la realización de este ejemplo tenemos una aplicación extremadamente sencilla con una arquitectura sencilla pero con un gran potencia de comunicación cliente servidor y viceversa, como conté arriba esta aplicación irá evolucionando y siempre me centrare en la arquitectura y el protocolo de comunicación, desde luego esta aplicación no cumple muchos de los principios que no ayudan a construir un software de calidad, pero si tu objetivo es comenzar a construir aplicaciones web que introduzcan ese grado de dinamismo gracias a los WebSocket, este es el mejor punto de partida.</p>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/04/10/incluyendo-base-de-datos-embebida/" > Incluyendo base de datos embebida</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/12/06/mi-paso-por-cas-y-el-paso-de-la-cas-por-mi/" >Mi paso por CAS y el paso de la CAS por mi.</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

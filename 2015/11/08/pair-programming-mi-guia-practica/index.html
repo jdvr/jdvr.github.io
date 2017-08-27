@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2015/11/08/pair-programming-mi-guia-practica/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Pair programming: Mi guía práctica"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image"  itemprop="image primaryImageOfPage" content="http://juandavidvega.es/images/banner-large.jpg" />
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Pair programming: Mi guía práctica - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/banner-large.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Pair programming: Mi guía práctica</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        08-11-2015
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/Programming/">Programming</a>/ <a href="/categories/Programming/Team/">Team</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>En estos momentos tengo la oportunidad de trabajar en una empresa donde los desarrolladores tenemos libertad para hacer pairing, si bien es cierto que a primera vista esta técnica pueda parecer simple, <em>“dos personas sentadas juntas programando en el mismo ordenador”</em>, la realidad es que en mi día a día siento que no aprovecho al 100% lo que el pair programming nos podría aportar y por mi parte probablemente se deba a la falta de conocimiento de como aprovechar mejor las sesiones, por esto mismo he decidido desempolvar todas las referencias que tengo sobre Pair Programming y hacer un pequeño resumen cómodo de consultar.</p>
+<a id="more"></a>
+<h3 id="Descripcion"><a href="#Descripcion" class="headerlink" title="Descripción"></a>Descripción</h3><p>El <strong>Pair programming</strong> es una conversación entre dos desarrolladores que se sientan juntos para desarrollar, analizar y testear de la mejor manera posible una pieza de código. A cambio de sentarse junto los desarrolladores deben:</p>
+<ul>
+<li>Ayudarse a mantener la concentración mutuamente</li>
+<li>Añadir ideas mejor refinadas para la implementación del sistema</li>
+<li>Tomar la iniciativa cuándo su compañero se queda bloqueado</li>
+<li>Adoptar cada uno de sus roles<br>&nbsp;</li>
+</ul>
+<p><a href="/images/2015/11/driver-navigator.png"><img src="/images/2015/11/driver-navigator.png" alt="driver-navigator"></a></p>
+<h3 id="Roles-Navigator"><a href="#Roles-Navigator" class="headerlink" title="Roles: Navigator"></a>Roles: Navigator</h3><p>Es el encargado de:</p>
+<ul>
+<li>Asegurarse de estar en el entorno de desarrollo correcto: tamaño de letra, IDE, colores, ficheros abiertos, etc..</li>
+<li>Mantener la mente fija en la meta sin distraer al Driver del “step” que se está dando en ese momento (pensamiento a largo plazo), puede apoyarse en una TODO LIST o un “goal stack”</li>
+<li>Mantener el rumbo cuando la sesión se desvía, recordar: Baby Steps, <a href="https://en.wikipedia.org/wiki/You_aren" target="_blank" rel="external">YAGNI </a>y <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank" rel="external">KISS</a>.</li>
+<li>Usar su conocimiento a largo plazo y que esta liberado del “step” para hacer fluir mejor los ciclos de TDD, ej: “Empecemos un test para esto”, “Es momento de refactorizar tal pieza de código”</li>
+<li>Es importarte reconocer cuando el Driver está concentrado y no interrumpir el flujo.</li>
+<li>Identificar si se deben intercambiar los roles cuando ve que el Driver esta cansado, o no están siendo capaz de mantener el flujo debido a problemas con algún conocimiento técnico o de negocio.<br>El Navigator no es un IDE, ni un faraón con escribano, no debe dictar código como si el Driver fuera su herramienta de escritura. Otro error muy común es corregir errores del estilo “falta un punto y coma”, “ojito con el paréntesis”, etc. Por suerte hoy en día contamos con herramientas para programar que son capaces de notar estos errores al instante que se comente y subrayarlo.</li>
+</ul>
+<h3 id="Roles-Driver"><a href="#Roles-Driver" class="headerlink" title="Roles: Driver"></a>Roles: Driver</h3><p>Es el que lleva la máquina, es el que suele estar escribiendo la mayor parte del tiempo, su responsabilidad es:</p>
+<ul>
+<li>Mantener el foco en el “step”, centrase en resolver la pieza de código concreta en la que está trabajando en ese momento</li>
+<li>Intentar no interrumpir la conversación monopolizando el teclado (este punto es responsabilidad de ambos).</li>
+<li>Es responsable también de comentar con su compañero el punto de vista que va a tomar para resolver ese problema concreto (no es cuestión de escribir sin comunicar nada y dar por supuesto que el otro nos sigue).</li>
+</ul>
+<h3 id="Aspectos-positivos-para-el-equipo"><a href="#Aspectos-positivos-para-el-equipo" class="headerlink" title="Aspectos positivos para el equipo"></a>Aspectos positivos para el equipo</h3><p>A nivel técnico el Pair Programming contribuye a:</p>
+<ul>
+<li>Transferencia de conocimiento entre miembros del equipo de manera natural y continua</li>
+<li>Más fácil adaptación de nuevos desarrolladores, ya que baja la dificultad para empezar a desarrollar en un entorno desconocido</li>
+<li>“Mejor Naming”: El código será más legible, digamos que ha pasado el “filtro” de dos personas</li>
+<li><p>En proyectos grandes donde no se suele conocer en detalle todas las partes de código, ayuda a que al menos sean dos personas las que saben por donde se puede orientar esa parte de la aplicación cuando en 1 semana o un mes haya que hacer cambios.<br>A nivel personal el Pair Programming contribuye a:</p>
+</li>
+<li><p>Fortalecer la relaciones dentro del equipo</p>
+</li>
+<li>Mejorar la confianza en el trabajo de los compañeros y el nuestro propio</li>
+<li>Dinamizar la jornada de trabajo que puede llegar a ser rutinaria.</li>
+</ul>
+<h3 id="Errores-comunes"><a href="#Errores-comunes" class="headerlink" title="Errores comunes"></a>Errores comunes</h3><ul>
+<li>Monopolizar el teclado, aunque el otro lo pida.</li>
+<li>No pedir el teclado cuando se siente que es necesario. (casi peor que monopolizarlo)</li>
+<li>No dejar opinar al compañero</li>
+<li>Posiciones: Los dos tienen que estar igual de cómodos tanto leyendo como escribiendo.</li>
+<li>Entorno de trabajo no preparado para los dos</li>
+<li><p>No descansar (o alternar) de manera eficiente<br>Referencias</p>
+</li>
+<li><p><a href="https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming" target="_blank" rel="external">https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming</a></p>
+</li>
+<li><a href="http://martinfowler.com/bliki/PairProgrammingMisconceptions.html" target="_blank" rel="external">http://martinfowler.com/bliki/PairProgrammingMisconceptions.html</a></li>
+<li><a href="http://www.carlosble.com/2015/07/productive-pair-programming/" target="_blank" rel="external">http://www.carlosble.com/2015/07/productive-pair-programming/</a></li>
+<li><a href="http://agilefocus.com/2009/01/06/21-ways-to-hate-pair-programming/" target="_blank" rel="external">http://agilefocus.com/2009/01/06/21-ways-to-hate-pair-programming/</a></li>
+<li>Extreme Programming Explained: Embrace Change (Pág. 56 – 57)<br>Nota: Como menciono al inicio, es un resumen personal que me sea cómodo de consultar, es probable que algunos elementos les falte contexto y se malinterpreten</li>
+</ul>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/12/06/mi-paso-por-cas-y-el-paso-de-la-cas-por-mi/" > Mi paso por CAS y el paso de la CAS por mi.</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2015/10/04/node-js-nodeschool-tutoriales-diferentes/" >Node.js, NodeSchool. Tutoriales diferentes</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="My life as a coder">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Juan David Vega">
+    
+
+    <meta property="og:url" content="http://juandavidvega.es/2016/10/07/Generating-static-websites-with-Mustache-and-Node/index.html" />
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Generating static websites with Mustache and Node"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="My life as a coder" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="My life as a coder"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="http://juandavidvega.es/images/2016/10/cover-mustache-node.JPG"/>
+    
+
+    <meta property="og:image:width" content="600" /> 
+    <meta property="og:image:height" content="315" />
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Generating static websites with Mustache and Node - My life as a coder</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-78972584-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Juan David Vega Rodríguez</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/headers">
+                            
+                                Images
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jdvr">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/images/2016/10/cover-mustache-node.JPG')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Generating static websites with Mustache and Node</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        07-10-2016
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-tags">
+                    
+                        
+
+<a href="/categories/pet/">pet</a>/ <a href="/categories/pet/work/">work</a>/ <a href="/categories/pet/work/side/">side</a>/ <a href="/categories/pet/work/side/projects/">projects</a>/ <a href="/categories/pet/work/side/projects/node/">node</a>/ <a href="/categories/pet/work/side/projects/node/javascript/">javascript</a>/ <a href="/categories/pet/work/side/projects/node/javascript/web/">web</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>During the past two months I have been working on a new project for a local little company. One of the parts of this projects is to create a simple website.</p>
+<p>On this point I started to look for a static site generator on google and I found <a href="https://www.staticgen.com/" target="_blank" rel="external">staticgen</a>, I tried some of them but no one fit on my need, so I decided to create my own. A lightweight  and simple static site generator, that allows me feel comfortable during the development but doesn’t force me to use a set of templates or a determinate folder structure and if one day I need to add some backend framework all my work could be easily adapted as templates.</p>
+<h2 id="The-basic-setup"><a href="#The-basic-setup" class="headerlink" title="The basic setup"></a>The basic setup</h2><p>After read the Mustache.js <a href="https://github.com/janl/mustache.js/" target="_blank" rel="external">documentation</a> I decide to use the Command Line Tool to generate the html files.  I am going to skip the explanation about the npm dependencies and package.json setup and lets start at <a href="https://github.com/jdvr/mustache-static-website/tree/e320fead9d62f77b30aa6dbf1251e5347b7834ee" target="_blank" rel="external">this point</a> with the package.json and the basic files. As dependencies we have Mustache, npm-watch and buildify, although some of them seem useless now, they will have an explanation on next paragraph. Now we have two scripts <em>generate.js</em> and <em>generate-command.js</em> and two folders <em>tpl</em> and <em>generable-pages</em>.  This dependencies and structure is the process of the  development but I am skipping the steps that lead me to this, to focus just on the result.</p>
+<h2 id="The-templates-and-The-views"><a href="#The-templates-and-The-views" class="headerlink" title="The templates and The views"></a>The templates and The views</h2><p>In case you don’t know how mustache works, there are two parts, the logic-less template which contains the structure with the tags:</p>
+<figure class="highlight html"><figcaption><span>Mustache Template</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">&#123;&#123;#offers&#125;&#125;</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-md-4 col-sm-6 col-xs-12"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">figure</span> <span class="attr">class</span>=<span class="string">"mg-room"</span>&gt;</span></div><div class="line">	  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"&#123;&#123;imageUrl&#125;&#125;"</span> <span class="attr">alt</span>=<span class="string">"img11"</span> <span class="attr">class</span>=<span class="string">"img-responsive"</span>&gt;</span></div><div class="line">	  <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span></div><div class="line">	    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">	    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mg-room-rating"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-star"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">	    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;description&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">	    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">class</span>=<span class="string">"btn btn-main"</span>&gt;</span></div><div class="line">	      &#123;&#123;button&#125;&#125;</div><div class="line">	    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">	  <span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">figure</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&#123;&#123;/offers&#125;&#125;</div><div class="line">....</div></pre></td></tr></table></figure>
+<p>And in the other hand the view which represent the data model for the template:</p>
+<figure class="highlight javascript"><figcaption><span>Model for offers</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"></div><div class="line">  <span class="string">"offers"</span>:</div><div class="line">  [</div><div class="line">    &#123;</div><div class="line">      <span class="string">"imageUrl"</span>: <span class="string">"images/offers/sample1.jpg"</span>,</div><div class="line">      <span class="string">"title"</span>: <span class="string">"Sample Title 1"</span>,</div><div class="line">      <span class="string">"description"</span>: <span class="string">"Sample Description 1"</span>,</div><div class="line">      <span class="string">"button"</span>: <span class="string">"Sample Text Button"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="string">"imageUrl"</span>: <span class="string">"images/offers/sample2.jpg"</span>,</div><div class="line">      <span class="string">"title"</span>: <span class="string">"Sample Title 2"</span>,</div><div class="line">      <span class="string">"description"</span>: <span class="string">"Sample Description 2"</span>,</div><div class="line">      <span class="string">"button"</span>: <span class="string">"Sample Text Button"</span></div><div class="line">    &#125;,</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="How-I-manage-templates"><a href="#How-I-manage-templates" class="headerlink" title="How I manage templates"></a>How I manage templates</h2><p>The way I have chosen is to create a <em>“target”</em> template which represent a base file where I include my partials, the partials are mustache template with a common content for many pages or with a business representative part, for instance, I have a partial for navigation bar because it is same for every page and a partial for the budget calculator because it is important for my business, so the index.mustache will look like this:</p>
+<figure class="highlight html"><figcaption><span>Index page base template</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"> <span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"es"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">  &#123;&#123;&gt; head&#125;&#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- More html --&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></div><div class="line">    &#123;&#123;&gt; nav&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span></div><div class="line">    &#123;&#123;&gt; budget-calculator&#125;&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- More html --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>For generating the “index.html” with the mustache command tool it is necessary a command like this:</p>
+<figure class="highlight sh"><figcaption><span>Mustache CLI command</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mustache -p path/to/head.mustache -p path/to/budget-calculator.mustache -p path/to/nav.mustache path/to/a/view.json  path/to/index.mustache &gt; index.html</div></pre></td></tr></table></figure>
+<p>The first step to create this command it is to relate the target template and the partials, for that, we use <em>“generable-page”</em> folder, I have created a file that contains this model:</p>
+<figure class="highlight javascript"><figcaption><span>index-model.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> generationData = &#123;&#125;;</div><div class="line"></div><div class="line">generationData.partials = [</div><div class="line">  <span class="string">"-p tpl/partials/head.mustache"</span>,</div><div class="line">  <span class="string">"-p tpl/partials/nav.mustache"</span>,</div><div class="line">  <span class="string">"-p tpl/partials/budget-calculator.mustache"</span></div><div class="line">];</div><div class="line">generationData.model = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"views/index/es/view.json"</span>,</div><div class="line">    <span class="comment">//the order is important on this partials</span></div><div class="line">    partials:[</div><div class="line">      ...</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line">generationData.target = <span class="string">"tpl/index.mustache"</span>;</div><div class="line">generationData.out = <span class="string">"index.html"</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = generationData;</div></pre></td></tr></table></figure>
+<p>A model has  a target template, the partials and the view. To get the command with the generable page model, the <em>command-generator.js</em> that allows us to compose the command that <em>generate.js</em> executes.</p>
+<h2 id="Mustache-template-with-dynamic-and-compose-views"><a href="#Mustache-template-with-dynamic-and-compose-views" class="headerlink" title="Mustache template with dynamic and compose views"></a>Mustache template with dynamic and compose views</h2><p>One of the requirements of Mustache cli is a json file that contains the view, that was a problem because I have common view elements on different templates,  so creating json file for each page will duplicate a lot of content on the view files.</p>
+<p>At this point I found <a href="https://github.com/powmedia/buildify" target="_blank" rel="external">buildify</a>, this tool allows me to set a base template and then insert a list of files as the template body. I just have to create a json file for each part of the page and then join them all on a single file before the command is execute. Thats why i specify a name and a few partials in the generation model.</p>
+<h2 id="Generating-the-site"><a href="#Generating-the-site" class="headerlink" title="Generating the site"></a>Generating the site</h2><p>After all, to generate the html files that you have declared on <em>generable-pages</em> files you just have to run this:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm generate</div></pre></td></tr></table></figure>
+<p>This use npm scripts to run the <em>generate.js</em> script.</p>
+<h2 id="The-summary"><a href="#The-summary" class="headerlink" title="The summary"></a>The summary</h2><p>A generable-page file contains the generation model: a target, partials for target, the view name, partials for view and the output file.<br>The tpl folder contains the target templates, like index.mustache and his partials. The structure inside this folder is not important.<br>With this, I can create any kind of static sites, without themes limits, not oriented to any kind of project (like blog or landing pages), and the result can be easily adapt to a non-static server render project without to much effort.</p>
+<p>I hope you like this project, it will be a pleasure for me to hear any feedback about this and answer any question.</p>
+<p>You can find a getting started set up <a href="https://github.com/jdvr/mustache-static-website" target="_blank" rel="external">here</a></p>
+
+
+                
+                <hr/>
+                <div class="col-lg-12 col-md-12 related-psot">
+                    <h5 class="text-center">Más articulos</h5>
+                    <div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/10/08/generar-un-pdf-a-patir-de-contenido-html-en-el-navegador-con-javascript/" > Generar un pdf a partir de contenido html en el navegador con javascript</a>
+	
+</div>
+<div class="col-lg-6 col-md-6">
+	
+		<a href="/2016/09/17/developer-week-idealista-equipo/" >Idealista Developer Week, Cultura de equipo</a>
+	
+</div>
+                </div>
+
+            </div>
+
+            
+            
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comentarios:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                        <li>
+                            <a href="https://twitter.com/juandvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jdvr" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <a href="https://es.linkedin.com/in/juandavidvegarguez" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted"> <a href="https://github.com/jdvr/hexo-theme-clean-blog" target="_blank">Forked</a> of The Adapted version by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'juandavidvega';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
