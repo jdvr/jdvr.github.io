@@ -1,6 +1,6 @@
 ---
 title: "Slimbook Katana: Mi opinión"
-date: 2017-08-20 15:59:21
+date: 2018-02-07 15:59:21
 cover: /images/2018/02/katana-desktop.png
 cover_caption: Mi escritorio
 id: 208
