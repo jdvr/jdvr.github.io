@@ -72,8 +72,8 @@ theme: clean-blog
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git 
-  repo: https://github.com/jdvr/jdvr.github.io
+  type: git
+  repo: git@github.com:jdvr/jdvr.github.io.git
 
 disqus_shortname: juandavidvega
 

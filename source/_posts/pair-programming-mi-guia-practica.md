@@ -52,6 +52,7 @@ A nivel técnico el Pair Programming contribuye a:
 *   Más fácil adaptación de nuevos desarrolladores, ya que baja la dificultad para empezar a desarrollar en un entorno desconocido
 *   “Mejor Naming”: El código será más legible, digamos que ha pasado el “filtro” de dos personas
 *   En proyectos grandes donde no se suele conocer en detalle todas las partes de código, ayuda a que al menos sean dos personas las que saben por donde se puede orientar esa parte de la aplicación cuando en 1 semana o un mes haya que hacer cambios.
+
 A nivel personal el Pair Programming contribuye a:
 
 *   Fortalecer la relaciones dentro del equipo
@@ -66,11 +67,13 @@ A nivel personal el Pair Programming contribuye a:
 *   Posiciones: Los dos tienen que estar igual de cómodos tanto leyendo como escribiendo.
 *   Entorno de trabajo no preparado para los dos
 *   No descansar (o alternar) de manera eficiente
-Referencias
 
-*   [https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming](https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming)
-*   [http://martinfowler.com/bliki/PairProgrammingMisconceptions.html](http://martinfowler.com/bliki/PairProgrammingMisconceptions.html)
-*   [http://www.carlosble.com/2015/07/productive-pair-programming/](http://www.carlosble.com/2015/07/productive-pair-programming/)
-*   [http://agilefocus.com/2009/01/06/21-ways-to-hate-pair-programming/](http://agilefocus.com/2009/01/06/21-ways-to-hate-pair-programming/)
-*   Extreme Programming Explained: Embrace Change (Pág. 56 – 57)
+### Referencias
+
+* [Effective Navigation in Pair Programming](https://www.thoughtworks.com/insights/blog/effective-navigation-in-pair-programming)
+* [PairProgrammingMisconceptions](http://martinfowler.com/bliki/PairProgrammingMisconceptions.html)
+* [Productive Pair Programming](http://www.carlosble.com/2015/07/productive-pair-programming/)
+* [21 ways to hate pair programming](http://agilefocus.com/2009/01/06/21-ways-to-hate-pair-programming/)
+* Extreme Programming Explained: Embrace Change (Pág. 56 – 57)
+
 Nota: Como menciono al inicio, es un resumen personal que me sea cómodo de consultar, es probable que algunos elementos les falte contexto y se malinterpreten

@@ -5,13 +5,10 @@ cover: /images/2017/08/vista-de-cuenca.jpg
 cover_caption: Vista desde un mirado de cuenca, Cuenca
 id: 208
 categories:
-  - Java
-  - Spring WebFlux
-  - Spring Data
-  - Mongo
-  - Reactive Programming
-  - Spring Boot
-  - tutorial
+  - Programming
+  - Refactoring
+  - Legacy
+  - Shell
 tags:
 ---
 
